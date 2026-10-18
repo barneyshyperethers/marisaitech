@@ -1,0 +1,222 @@
+{
+  "project": "MARIS AI WebGL website",
+  "timezone": "Europe/Warsaw",
+  "request_start": "2026-10-18T00:45:17+02:00",
+  "delivery_deadline": "2026-10-18T11:00:00+02:00",
+  "completed_stages": [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VIII",
+    "IX"
+  ],
+  "blocked_stages": [],
+  "updated_at": "2026-10-18T18:17:38.779861+00:00",
+  "next_stage": "user_review",
+  "expected_glossary_count": 98,
+  "schedule_status": "Historical schedule; latest user request executed immediately.",
+  "runtime_qa": "New implementation: no tests, completeness or navigation checks at the user’s explicit request.",
+  "stages": [
+    {
+      "stage": "I",
+      "title": "Strona główna, wspólny JS, satelita",
+      "dependencies": [],
+      "scheduled_start": "2026-10-18T00:45:17+02:00",
+      "status": "completed"
+    },
+    {
+      "stage": "II",
+      "title": "Zielona ściana LED z pluginami",
+      "dependencies": [
+        "I"
+      ],
+      "scheduled_start": "2026-10-18T01:45:17+02:00",
+      "status": "completed",
+      "completed_at": "2026-10-18T01:53:56.077899+02:00"
+    },
+    {
+      "stage": "III",
+      "title": "Przycisk wiedzy i szkielet słowniczka",
+      "dependencies": [
+        "I"
+      ],
+      "scheduled_start": "2026-10-18T02:45:17+02:00",
+      "status": "completed",
+      "completed_at": "2026-10-18T03:47:21.000Z"
+    },
+    {
+      "stage": "IV",
+      "title": "Scena 3D słowniczka",
+      "dependencies": [
+        "III"
+      ],
+      "scheduled_start": "2026-10-18T03:45:17+02:00",
+      "status": "implemented_unreviewed"
+    },
+    {
+      "stage": "V",
+      "title": "Ściana 98 pojęć, opisy i grafiki",
+      "dependencies": [
+        "IV"
+      ],
+      "scheduled_start": "2026-10-18T04:45:17+02:00",
+      "status": "implemented_unreviewed"
+    },
+    {
+      "stage": "VI",
+      "title": "Audyt kompletności słownika",
+      "dependencies": [
+        "V"
+      ],
+      "scheduled_start": "2026-10-18T05:45:17+02:00",
+      "status": "left_to_user_at_explicit_request"
+    },
+    {
+      "stage": "VII",
+      "title": "Drugi audyt treści i ilustracji",
+      "dependencies": [
+        "VI"
+      ],
+      "scheduled_start": "2026-10-18T06:45:17+02:00",
+      "status": "left_to_user_at_explicit_request"
+    },
+    {
+      "stage": "VIII",
+      "title": "35 pytań ABCD",
+      "dependencies": [
+        "V"
+      ],
+      "scheduled_start": "2026-10-18T07:45:17+02:00",
+      "status": "implemented_unreviewed"
+    },
+    {
+      "stage": "IX",
+      "title": "Strona quizu i wynik X/35",
+      "dependencies": [
+        "VIII",
+        "III"
+      ],
+      "scheduled_start": "2026-10-18T08:45:17+02:00",
+      "status": "implemented_unreviewed"
+    },
+    {
+      "stage": "X",
+      "title": "Testy całości i paczka końcowa",
+      "dependencies": [
+        "II",
+        "IV",
+        "V",
+        "VI",
+        "VII",
+        "VIII",
+        "IX"
+      ],
+      "scheduled_start": "2026-10-18T09:45:17+02:00",
+      "status": "left_to_user_at_explicit_request"
+    }
+  ],
+  "stage_results": {
+    "I": {
+      "summary": "Original 7 systems retained; real mesh satellite, clickable by raycast and two accessible buttons; PDF-grounded PNT-Trust/SDR-AIS dialog; one external project JS file, inline CSS.",
+      "validation": [
+        "node --input-type=module --check passed",
+        "HTML parser: one script, unique IDs, all static JS DOM references present",
+        "All original system names retained",
+        "98 source glossary entries extracted, none empty"
+      ],
+      "limits": [
+        "WebGL has not been browser-tested.",
+        "Three.js 0.180.0 and OrbitControls still depend on esm.sh."
+      ]
+    },
+    "II": {
+      "summary": "Square green LED wall in the actual WebGL scene; four raycastable product tiles, equivalent accessible HTML buttons, PDF-grounded Polish summaries, individual icons and four photorealistic AI illustrations; local Doto LED font with Polish glyphs and readability toggle.",
+      "geometry": {
+        "shipLength": 15.934558391571045,
+        "wallWidth": 15.934558391571045,
+        "wallHeight": 15.934558391571045,
+        "gap": 15.934558391571045,
+        "behind_axis": "-Z background",
+        "measurement": "Hull-side to front reference plane; L from hull geometry bounding box"
+      },
+      "validation": [
+        "JavaScript syntax and unique HTML IDs passed; one public project script; all static DOM references resolved",
+        "All four 1536x1024 PNGs verified; local Doto font covers Polish diacritics",
+        "Original demo, PDFs, glossary extraction and CONTINUE.md byte-identical to previous checkpoint",
+        "Original seven ship systems and a mesh satellite retained",
+        "Square wall and one hull-length gap use actual hull bounds",
+        "Camera frames scene, ship and wall on desktop and phone aspect ratios",
+        "Four 3D tile centers raycast to correct dialogs, images and source notes",
+        "Keyboard-equivalent buttons, readable-font toggle and focus return",
+        "Descriptions and satellite dialog survive simulated CDN failure"
+      ],
+      "limits": [
+        "No browser, GPU rendering, real 2D canvas text layout, CSS or visual screenshot verification.",
+        "Three.js 0.180.0 and OrbitControls still require internet from esm.sh.",
+        "Real browser rendering, LED text layout, CSS and physical keyboard/touch behavior need visual/browser verification."
+      ],
+      "assets": [
+        {
+          "plugin": "soar",
+          "image": "grafiki/plugin-soar.png",
+          "sha256": "a57f0ed65711b05289060ed7c86f9a9818b9a89670fe60fc35d072b71874ce25",
+          "size_bytes": 1904630
+        },
+        {
+          "plugin": "fusion",
+          "image": "grafiki/plugin-fusion.png",
+          "sha256": "a2e7f7039e5e1c1893ee8dae8002484e33add121cebd03a3524ed8adea7a07b8",
+          "size_bytes": 1874664
+        },
+        {
+          "plugin": "triage",
+          "image": "grafiki/plugin-triage.png",
+          "sha256": "3901ae0c85b64c379feeedb04c2e3958797091709821fc46e78a7e916a244738",
+          "size_bytes": 1913393
+        },
+        {
+          "plugin": "voice",
+          "image": "grafiki/plugin-voice.png",
+          "sha256": "35e91e185d904cf1a19a517c08e4c885fa5f96a94ffde963c3eff7d69d04b768",
+          "size_bytes": 1865715
+        }
+      ],
+      "qa_report": "_work/stage-II-report.md"
+    },
+    "III": {
+      "summary": "Top-right 'chcę wiedzieć więcej' link to a Polish glossary skeleton with return navigation. Existing application JS, sources and images preserved.",
+      "validation": [
+        "Static HTML/link/resource validation passed.",
+        "Original source documents, JavaScript, images and tests are byte-identical.",
+        "Stage II non-browser geometry/interaction regression passed."
+      ],
+      "limits": [
+        "No browser navigation/layout/WebGL visual testing.",
+        "Glossary 3D scene, definitions and quiz are not yet implemented."
+      ],
+      "qa_report": "_work/stage-III-report.md",
+      "source_library_version": 2
+    }
+  },
+  "library_file_id": "libfile_ef4c9a742cd481919f3c2afb890b0697",
+  "automation_id": "6ad3fc2d4ce88191a7810cc22c827736",
+  "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Europe/Warsaw:20261018T014517\nRRULE:FREQ=HOURLY;INTERVAL=1;COUNT=9\nEND:VEVENT",
+  "offline_update": {
+    "three_version": "0.180.0",
+    "runtime": "classic local IIFE bundle",
+    "source": "_work/src/main.js",
+    "browser_qa": false
+  },
+  "latest_delivery": {
+    "terms": 98,
+    "quiz_questions": 35,
+    "scene": "Home-page geometry, materials and environment copied; warm yellow palette; orange wall 14 rows x 7 columns; square tiles; width 2 hull lengths",
+    "validation": "not performed; earlier explicit user preference retained",
+    "package": "MARIS_AI_nowa_scena_slowniczka.zip",
+    "preserved": "existing catalog and quiz",
+    "wall_alignment": "Wall center at stern hull midpoint; approximately half underwater",
+    "glossary_source_labels": "Removed visible document title, source-page numbers and source PDF link"
+  }
+}

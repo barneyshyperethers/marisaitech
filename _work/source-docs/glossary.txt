@@ -1,0 +1,349 @@
+
+--- PAGE 1 ---
+Słowniczek pojęć technicznych​
+Radio, częstotliwości i przetwarzanie łączności VHF/GMDSS 
+Wersja robocza przygotowana na podstawie materiałów MARIS.AI 
+Dokument porządkuje podstawowe i zaawansowane pojęcia używane przy opisie morskiej łączności radiowej, analizy 
+sygnału, rozpoznawania mowy oraz wykrywania fałszywych lub syntetycznych transmisji głosowych. Definicje mają 
+charakter praktyczny i są dostosowane do kontekstu projektów MARIS.AI. 
+1. Podstawy radia i częstotliwości 
+Kontekst źródłowy: materiały opisują pasywną analizę kanałów VHF/GMDSS, połączenie biometrii 
+mówcy, detekcji deepfake i cech radiowych oraz architekturę działającą w czasie zbliżonym do 
+rzeczywistego. 
+Pojęcie / skrót 
+Definicja praktyczna 
+Fala radiowa 
+Fala elektromagnetyczna wykorzystywana do bezprzewodowego przesyłania 
+informacji. W systemach morskich przenosi m.in. głos, dane identyfikacyjne i 
+sygnały alarmowe. 
+Częstotliwość 
+Liczba pełnych cykli fali w ciągu sekundy, wyrażana w hercach (Hz). Decyduje 
+m.in. o zasięgu, sposobie propagacji i wymaganej konstrukcji anteny. 
+Herc (Hz) 
+Jednostka częstotliwości. 1 Hz oznacza jeden cykl na sekundę; w 
+radiokomunikacji częściej używa się kHz, MHz i GHz. 
+Pasmo częstotliwości 
+Zakres częstotliwości przeznaczony dla określonych usług lub systemów 
+radiowych. 
+VHF 
+Very High Frequency – zakres 30–300 MHz. W łączności morskiej używany 
+głównie do komunikacji głosowej na krótkich i średnich dystansach, zwykle w 
+zasięgu optycznym. 
+Kanał radiowy 
+Wydzielona część pasma o ustalonej częstotliwości lub parze częstotliwości, 
+przeznaczona do konkretnego rodzaju komunikacji. 
+Kanał 16 VHF 
+Międzynarodowy kanał wywoławczy i alarmowy w morskiej łączności VHF. Jest 
+wykorzystywany m.in. do komunikatów MAYDAY, PAN-PAN i połączeń 
+wstępnych. 
+Kanał 70 VHF 
+Kanał cyfrowy przeznaczony dla DSC. Nie służy do zwykłej rozmowy głosowej. 
+Simplex 
+Tryb łączności, w którym nadawanie odbywa się naprzemiennie na tej samej 
+częstotliwości. 
+Duplex 
+Tryb łączności wykorzystujący różne częstotliwości dla nadawania i odbioru, 
+umożliwiający komunikację w obu kierunkach. 
+Szerokość kanału 
+Zakres widma zajmowany przez pojedynczy kanał radiowy. Wpływa na jakość 
+dźwięku, odporność na zakłócenia i liczbę dostępnych kanałów. 
+Nośna 
+Podstawowy sygnał radiowy o określonej częstotliwości, na który nakłada się 
+informację poprzez modulację. 
+Modulacja 
+Proces zmiany parametrów fali nośnej w celu przeniesienia informacji, np. głosu. 
+FM 
+Frequency Modulation – modulacja częstotliwości. Powszechnie stosowana w 
+morskiej telefonii VHF ze względu na dobrą jakość głosu i odporność na część 
+zakłóceń. 
+Widmo sygnału 
+Rozkład energii sygnału w funkcji częstotliwości. Analiza widma pomaga 
+wykrywać zakłócenia, artefakty syntezy głosu i nietypowe cechy transmisji. 
+Propagacja 
+Sposób rozchodzenia się fal radiowych w środowisku. Dla VHF dominujące 
+znaczenie ma propagacja zbliżona do linii widzenia. 
+Linia widzenia radiowego 
+Przybliżony obszar bezpośredniej dostępności radiowej między antenami. 
+Zasięg zależy m.in. od wysokości anten i przeszkód terenowych. 
+MARIS.AI — słowniczek roboczy 
+
+
+--- PAGE 2 ---
+Tłumienie 
+Spadek mocy sygnału podczas propagacji, wynikający np. z odległości, 
+przeszkód, pogody lub strat w instalacji antenowej. 
+Interferencja 
+Zakłócenie powstałe wskutek nakładania się innych sygnałów radiowych na 
+odbieraną transmisję. 
+Szum 
+Niepożądana składowa sygnału utrudniająca odbiór i analizę mowy. W 
+środowisku morskim może pochodzić z urządzeń, pogody, silników i innych 
+nadajników. 
+SNR 
+Signal-to-Noise Ratio – stosunek mocy sygnału użytecznego do mocy szumu. 
+Wyższy SNR zwykle oznacza lepszą czytelność transmisji. 
+NB-FM 
+Narrowband Frequency Modulation – wąskopasmowa modulacja częstotliwości 
+typowa dla radiotelefonii profesjonalnej i morskiej. 
+Degradacja kanału 
+Łączny wpływ szumu, zniekształceń, ograniczonego pasma, zaniku i 
+interferencji na jakość transmisji. 
+ 
+Łączność morska i procedury 
+Pojęcie / skrót 
+Definicja praktyczna 
+GMDSS 
+Global Maritime Distress and Safety System – globalny system bezpieczeństwa 
+i łączności alarmowej na morzu. 
+DSC 
+Digital Selective Calling – cyfrowe selektywne wywołanie, służące do inicjowania 
+alarmów i połączeń radiowych, m.in. na kanale 70 VHF. 
+MAYDAY 
+Najwyższy stopień alarmu głosowego, oznaczający bezpośrednie i poważne 
+zagrożenie życia lub jednostki. 
+PAN-PAN 
+Komunikat pilności używany w sytuacji poważnej, ale niekoniecznie 
+oznaczającej bezpośrednie zagrożenie życia. 
+SECURITÉ 
+Komunikat bezpieczeństwa dotyczący np. zagrożeń nawigacyjnych lub 
+meteorologicznych. 
+DISTRESS 
+Kategoria komunikatu alarmowego wskazującego na bezpośrednie zagrożenie; 
+w materiałach MARIS.AI traktowana jako klasa safety-critical. 
+VTS 
+Vessel Traffic Service – służba nadzoru i organizacji ruchu statków w porcie lub 
+obszarze przybrzeżnym. 
+Callsign 
+Radiowy znak wywoławczy przypisany stacji lub jednostce pływającej. 
+MMSI 
+Maritime Mobile Service Identity – dziewięciocyfrowy numer identyfikujący statek 
+lub stację morską w systemach cyfrowych. 
+AIS 
+Automatic Identification System – system automatycznej wymiany danych o 
+pozycji, kursie, prędkości i tożsamości statku. 
+SAR 
+Search and Rescue – działania poszukiwawczo-ratownicze uruchamiane w 
+odpowiedzi na zdarzenia alarmowe. 
+Radiotelefon morski 
+Urządzenie nadawczo-odbiorcze używane do prowadzenia łączności głosowej i 
+alarmowej na statku lub w stacji brzegowej. 
+Nasłuch 
+Ciągłe monitorowanie określonego kanału, zwłaszcza kanału alarmowego, bez 
+aktywnego nadawania. 
+Flooding kanału 
+Celowe lub przypadkowe przeciążenie kanału dużą liczbą transmisji, które może 
+utrudnić odebranie prawdziwego alarmu. 
+Voice replay attack 
+Atak polegający na ponownym odtworzeniu wcześniej zarejestrowanej, 
+autentycznej transmisji w celu wywołania błędnej reakcji. 
+Fałszywy MAYDAY 
+Nieautentyczny komunikat alarmowy wygenerowany przez człowieka, 
+syntezator mowy albo system deepfake. 
+ 
+Sprzęt i tor radiowy 
+Pojęcie / skrót 
+Definicja praktyczna 
+SDR 
+Software-Defined Radio – radio, w którym znaczną część funkcji odbioru, filtracji 
+i demodulacji realizuje oprogramowanie. 
+MARIS.AI — słowniczek roboczy 
+
+
+--- PAGE 3 ---
+RTL-SDR 
+Popularna rodzina niedrogich odbiorników SDR wykorzystywanych do 
+prototypowania i monitorowania pasm radiowych. 
+HackRF One 
+Szerokopasmowe urządzenie SDR zdolne do odbioru i nadawania, stosowane 
+w testach i badaniach radiowych. 
+Antenna / antena 
+Element zamieniający energię elektryczną na falę elektromagnetyczną i 
+odwrotnie. 
+Front-end radiowy 
+Część toru odbiorczego obejmująca antenę, filtry, wzmacniacze i układy 
+częstotliwościowe przed konwersją do postaci cyfrowej. 
+Próbkowanie 
+Zamiana sygnału ciągłego na ciąg próbek cyfrowych wykonywanych z określoną 
+częstotliwością. 
+Częstotliwość próbkowania 
+Liczba próbek sygnału pobieranych w ciągu sekundy, np. 16 kHz dla 
+przetwarzania mowy. 
+PCM 
+Pulse Code Modulation – standardowa reprezentacja cyfrowego sygnału audio 
+jako ciągu wartości amplitudy. 
+I/Q 
+Dwie składowe cyfrowej reprezentacji sygnału radiowego: in-phase i quadrature. 
+Umożliwiają pełną analizę amplitudy i fazy. 
+Demodulacja 
+Odzyskiwanie informacji, np. głosu, z odebranej zmodulowanej fali nośnej. 
+Filtr pasmowy 
+Układ przepuszczający wybrany zakres częstotliwości i tłumiący pozostałe. 
+Doppler 
+Zmiana obserwowanej częstotliwości wynikająca z ruchu nadajnika, odbiornika 
+lub obiektu odbijającego sygnał. 
+ 
+Analiza mowy i sztuczna inteligencja 
+Pojęcie / skrót 
+Definicja praktyczna 
+ASR 
+Automatic Speech Recognition – automatyczne rozpoznawanie mowy i zamiana 
+transmisji głosowej na tekst. 
+VAD 
+Voice Activity Detection – wykrywanie fragmentów, w których występuje mowa, z 
+pominięciem ciszy i części szumu. 
+Transkrypcja 
+Tekstowy zapis treści wypowiedzi radiowej. 
+Whisper 
+Rodzina modeli rozpoznawania mowy używana w materiałach MARIS.AI jako 
+element transkrypcji i wstępnej annotacji. 
+Confidence score 
+Wskaźnik pewności modelu co do rozpoznanego słowa, segmentu lub klasy. 
+WER 
+Word Error Rate – miara błędów rozpoznawania mowy uwzględniająca zamiany, 
+usunięcia i wstawienia słów. 
+Semantic WER 
+Zmodyfikowana miara błędów, która nadaje większą wagę pomyłkom istotnym 
+operacyjnie, np. błędnym współrzędnym lub numerom kanałów. 
+Speaker fingerprinting 
+Rozpoznawanie lub weryfikacja mówcy na podstawie charakterystycznych cech 
+głosu. 
+Biometria głosowa 
+Techniki identyfikacji lub weryfikacji osoby na podstawie parametrów jej mowy. 
+X-vector 
+Wektorowa reprezentacja cech głosu używana w systemach rozpoznawania 
+mówcy. 
+ECAPA-TDNN 
+Architektura sieci neuronowej stosowana do tworzenia reprezentacji głosu i 
+weryfikacji mówcy. 
+MFCC 
+Mel-Frequency Cepstral Coefficients – zestaw cech opisujących widmo mowy w 
+sposób zbliżony do percepcji ludzkiego słuchu. 
+Formant 
+Rezonansowa składowa widma mowy związana z ułożeniem traktu głosowego. 
+Jitter 
+Krótkookresowa zmienność częstotliwości podstawowej głosu. 
+Shimmer 
+Krótkookresowa zmienność amplitudy głosu. 
+Deepfake audio 
+Syntetycznie wygenerowana lub zmodyfikowana wypowiedź imitująca głos 
+konkretnej osoby. 
+TTS 
+Text-to-Speech – synteza mowy na podstawie tekstu. 
+Anti-spoofing 
+Zestaw metod wykrywających próby podszycia się, w tym syntezę głosu, replay i 
+manipulację nagraniem. 
+Spoof score 
+Wynik liczbowy określający prawdopodobieństwo, że transmisja jest fałszywa 
+lub zmanipulowana. 
+MARIS.AI — słowniczek roboczy 
+
+
+--- PAGE 4 ---
+Deep score 
+Wynik detektora wskazujący prawdopodobieństwo obecności artefaktów 
+deepfake lub syntezy mowy. 
+Bio score 
+Wynik związany z podobieństwem głosu do zarejestrowanego profilu mówcy. 
+RF score 
+W materiałach MARIS.AI: wynik oceniający zgodność parametrów radiowych 
+transmisji z oczekiwanym nadajnikiem lub środowiskiem. 
+Ensemble 
+Połączenie wyników wielu modeli w celu uzyskania stabilniejszej i dokładniejszej 
+decyzji. 
+Fusion / fuzja wyników 
+Łączenie danych z kilku źródeł, np. biometrii głosowej, detekcji deepfake i cech 
+radiowych. 
+Y-layer fusion 
+Warstwa decyzyjna opisana w architekturze MARIS.AI, agregująca wyniki wielu 
+detektorów do końcowego spoof score. 
+CNN 
+Convolutional Neural Network – sieć neuronowa dobrze nadająca się do analizy 
+lokalnych wzorców w spektrogramach. 
+LSTM 
+Long Short-Term Memory – sieć rekurencyjna przeznaczona do analizy 
+zależności czasowych. 
+MHA 
+Multi-Head Attention – mechanizm uwagi analizujący równolegle różne 
+zależności w sygnale. 
+MGATF 
+Multi-Granularity Adaptive Time-Frequency – moduł analizujący sygnał w wielu 
+skalach czasu i częstotliwości. 
+Spektrogram 
+Graficzna lub numeryczna reprezentacja energii sygnału w funkcji czasu i 
+częstotliwości. 
+ 
+Parametry jakości, opóźnienie i wdrożenie 
+Pojęcie / skrót 
+Definicja praktyczna 
+Latency / opóźnienie 
+Czas od odebrania sygnału do wygenerowania wyniku lub alertu. W systemach 
+alarmowych powinien być możliwie krótki. 
+Edge inference 
+Uruchamianie modelu bezpośrednio na urządzeniu brzegowym, blisko źródła 
+sygnału, zamiast w odległej chmurze. 
+Real-time 
+Przetwarzanie danych z opóźnieniem wystarczająco małym, by system mógł 
+wspierać bieżące działania operatora. 
+EER 
+Equal Error Rate – punkt, w którym odsetek fałszywych akceptacji jest równy 
+odsetkowi fałszywych odrzuceń; często używany do oceny biometrii. 
+Recall 
+Czułość detektora, czyli odsetek prawdziwych zdarzeń wykrytych przez system. 
+False positive 
+Fałszywy alarm: system zgłasza zagrożenie, mimo że transmisja jest 
+prawidłowa. 
+False negative 
+Niewykryte zagrożenie: system uznaje fałszywą lub niebezpieczną transmisję za 
+prawidłową. 
+Hard veto gate 
+Mechanizm bezpieczeństwa, który uniemożliwia, aby wynik antyspoofingu 
+zablokował alarm o bardzo wysokim prawdopodobieństwie rzeczywistego 
+distress. 
+Advisory-only 
+Model działania, w którym system przedstawia operatorowi ocenę i 
+rekomendację, ale nie wykonuje samodzielnie działań operacyjnych. 
+Human-in-the-loop 
+Proces, w którym człowiek zatwierdza, koryguje lub odrzuca decyzję systemu 
+AI. 
+Federated learning 
+Uczenie modelu na danych znajdujących się w wielu lokalizacjach bez 
+centralnego przesyłania surowych nagrań. 
+Shadow mode 
+Tryb wdrożenia, w którym system analizuje transmisje, lecz jego wyniki nie 
+wpływają jeszcze na operacje. 
+TensorRT 
+Środowisko optymalizacji i uruchamiania modeli AI na sprzęcie NVIDIA. 
+INT8 quantization 
+Kwantyzacja modelu do 8-bitowej reprezentacji liczb, zmniejszająca wymagania 
+obliczeniowe i opóźnienie. 
+Jetson AGX Orin 
+Platforma obliczeniowa NVIDIA przeznaczona do uruchamiania modeli AI na 
+brzegu sieci. 
+Audit trail 
+Chronologiczny, niezmienny zapis danych wejściowych, wyników i działań 
+operatora. 
+MARIS.AI — słowniczek roboczy 
+
+
+--- PAGE 5 ---
+Data provenance 
+Pochodzenie danych i pełna historia ich przetwarzania, wersjonowania oraz 
+użycia do trenowania modelu. 
+ 
+2. Skrócona mapa zależności 
+●​
+Sygnał radiowy VHF → SDR / radiotelefon → demodulacja → PCM audio → VAD → ASR → analiza treści. 
+●​
+PCM audio → cechy głosu (MFCC, formanty, x-vector) → biometria mówcy → BIO_SCORE. 
+●​
+PCM / spektrogram → CNN, LSTM, MHA, MGATF → detekcja deepfake → DEEP_SCORE. 
+●​
+Cechy radiowe i kontekst nadajnika → RF_SCORE. 
+●​
+BIO_SCORE + DEEP_SCORE + RF_SCORE + cechy czasowe → fuzja Y-layer → SPOOF_SCORE → 
+rekomendacja dla operatora. 
+3. Uwagi do dalszej pracy 
+Słowniczek może być w kolejnym kroku rozszerzony o: (1) dokładne częstotliwości i przeznaczenie kanałów morskich 
+VHF, (2) tabelę alarmów GMDSS, (3) słownik cyberataków radiowych, (4) słownik modeli ML i metryk, albo (5) wersję 
+angielsko-polską. 
+MARIS.AI — słowniczek roboczy 

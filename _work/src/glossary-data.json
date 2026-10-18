@@ -1,0 +1,688 @@
+[
+  {
+    "id": "term-001",
+    "name": "Fala radiowa",
+    "definition": "Fala elektromagnetyczna wykorzystywana do bezprzewodowego przesyłania informacji. W systemach morskich przenosi m.in. głos, dane identyfikacyjne i sygnały alarmowe.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-002",
+    "name": "Częstotliwość",
+    "definition": "Liczba pełnych cykli fali w ciągu sekundy, wyrażana w hercach (Hz). Decyduje m.in. o zasięgu, sposobie propagacji i wymaganej konstrukcji anteny.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-003",
+    "name": "Herc (Hz)",
+    "definition": "Jednostka częstotliwości. 1 Hz oznacza jeden cykl na sekundę; w radiokomunikacji częściej używa się kHz, MHz i GHz.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-004",
+    "name": "Pasmo częstotliwości",
+    "definition": "Zakres częstotliwości przeznaczony dla określonych usług lub systemów radiowych.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-005",
+    "name": "VHF",
+    "definition": "Very High Frequency – zakres 30–300 MHz. W łączności morskiej używany głównie do komunikacji głosowej na krótkich i średnich dystansach, zwykle w zasięgu optycznym.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-006",
+    "name": "Kanał radiowy",
+    "definition": "Wydzielona część pasma o ustalonej częstotliwości lub parze częstotliwości, przeznaczona do konkretnego rodzaju komunikacji.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-007",
+    "name": "Kanał 16 VHF",
+    "definition": "Międzynarodowy kanał wywoławczy i alarmowy w morskiej łączności VHF. Jest wykorzystywany m.in. do komunikatów MAYDAY, PAN-PAN i połączeń wstępnych.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-008",
+    "name": "Kanał 70 VHF",
+    "definition": "Kanał cyfrowy przeznaczony dla DSC. Nie służy do zwykłej rozmowy głosowej.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-009",
+    "name": "Simplex",
+    "definition": "Tryb łączności, w którym nadawanie odbywa się naprzemiennie na tej samej częstotliwości.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-010",
+    "name": "Duplex",
+    "definition": "Tryb łączności wykorzystujący różne częstotliwości dla nadawania i odbioru, umożliwiający komunikację w obu kierunkach.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-011",
+    "name": "Szerokość kanału",
+    "definition": "Zakres widma zajmowany przez pojedynczy kanał radiowy. Wpływa na jakość dźwięku, odporność na zakłócenia i liczbę dostępnych kanałów.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-012",
+    "name": "Nośna",
+    "definition": "Podstawowy sygnał radiowy o określonej częstotliwości, na który nakłada się informację poprzez modulację.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-013",
+    "name": "Modulacja",
+    "definition": "Proces zmiany parametrów fali nośnej w celu przeniesienia informacji, np. głosu.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-014",
+    "name": "FM",
+    "definition": "Frequency Modulation – modulacja częstotliwości. Powszechnie stosowana w morskiej telefonii VHF ze względu na dobrą jakość głosu i odporność na część zakłóceń.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-015",
+    "name": "Widmo sygnału",
+    "definition": "Rozkład energii sygnału w funkcji częstotliwości. Analiza widma pomaga wykrywać zakłócenia, artefakty syntezy głosu i nietypowe cechy transmisji.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-016",
+    "name": "Propagacja",
+    "definition": "Sposób rozchodzenia się fal radiowych w środowisku. Dla VHF dominujące znaczenie ma propagacja zbliżona do linii widzenia.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-017",
+    "name": "Linia widzenia radiowego",
+    "definition": "Przybliżony obszar bezpośredniej dostępności radiowej między antenami. Zasięg zależy m.in. od wysokości anten i przeszkód terenowych.",
+    "sourcePage": 1,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-018",
+    "name": "Tłumienie",
+    "definition": "Spadek mocy sygnału podczas propagacji, wynikający np. z odległości, przeszkód, pogody lub strat w instalacji antenowej.",
+    "sourcePage": 2,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-019",
+    "name": "Interferencja",
+    "definition": "Zakłócenie powstałe wskutek nakładania się innych sygnałów radiowych na odbieraną transmisję.",
+    "sourcePage": 2,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-020",
+    "name": "Szum",
+    "definition": "Niepożądana składowa sygnału utrudniająca odbiór i analizę mowy. W środowisku morskim może pochodzić z urządzeń, pogody, silników i innych nadajników.",
+    "sourcePage": 2,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-021",
+    "name": "SNR",
+    "definition": "Signal-to-Noise Ratio – stosunek mocy sygnału użytecznego do mocy szumu. Wyższy SNR zwykle oznacza lepszą czytelność transmisji.",
+    "sourcePage": 2,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-022",
+    "name": "NB-FM",
+    "definition": "Narrowband Frequency Modulation – wąskopasmowa modulacja częstotliwości typowa dla radiotelefonii profesjonalnej i morskiej.",
+    "sourcePage": 2,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-023",
+    "name": "Degradacja kanału",
+    "definition": "Łączny wpływ szumu, zniekształceń, ograniczonego pasma, zaniku i interferencji na jakość transmisji.",
+    "sourcePage": 2,
+    "category": "Podstawy radia i częstotliwości"
+  },
+  {
+    "id": "term-024",
+    "name": "GMDSS",
+    "definition": "Global Maritime Distress and Safety System – globalny system bezpieczeństwa i łączności alarmowej na morzu.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-025",
+    "name": "DSC",
+    "definition": "Digital Selective Calling – cyfrowe selektywne wywołanie, służące do inicjowania alarmów i połączeń radiowych, m.in. na kanale 70 VHF.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-026",
+    "name": "MAYDAY",
+    "definition": "Najwyższy stopień alarmu głosowego, oznaczający bezpośrednie i poważne zagrożenie życia lub jednostki.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-027",
+    "name": "PAN-PAN",
+    "definition": "Komunikat pilności używany w sytuacji poważnej, ale niekoniecznie oznaczającej bezpośrednie zagrożenie życia.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-028",
+    "name": "SECURITÉ",
+    "definition": "Komunikat bezpieczeństwa dotyczący np. zagrożeń nawigacyjnych lub meteorologicznych.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-029",
+    "name": "DISTRESS",
+    "definition": "Kategoria komunikatu alarmowego wskazującego na bezpośrednie zagrożenie; w materiałach MARIS.AI traktowana jako klasa safety-critical.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-030",
+    "name": "VTS",
+    "definition": "Vessel Traffic Service – służba nadzoru i organizacji ruchu statków w porcie lub obszarze przybrzeżnym.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-031",
+    "name": "Callsign",
+    "definition": "Radiowy znak wywoławczy przypisany stacji lub jednostce pływającej.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-032",
+    "name": "MMSI",
+    "definition": "Maritime Mobile Service Identity – dziewięciocyfrowy numer identyfikujący statek lub stację morską w systemach cyfrowych.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-033",
+    "name": "AIS",
+    "definition": "Automatic Identification System – system automatycznej wymiany danych o pozycji, kursie, prędkości i tożsamości statku.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-034",
+    "name": "SAR",
+    "definition": "Search and Rescue – działania poszukiwawczo-ratownicze uruchamiane w odpowiedzi na zdarzenia alarmowe.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-035",
+    "name": "Radiotelefon morski",
+    "definition": "Urządzenie nadawczo-odbiorcze używane do prowadzenia łączności głosowej i alarmowej na statku lub w stacji brzegowej.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-036",
+    "name": "Nasłuch",
+    "definition": "Ciągłe monitorowanie określonego kanału, zwłaszcza kanału alarmowego, bez aktywnego nadawania.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-037",
+    "name": "Flooding kanału",
+    "definition": "Celowe lub przypadkowe przeciążenie kanału dużą liczbą transmisji, które może utrudnić odebranie prawdziwego alarmu.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-038",
+    "name": "Voice replay attack",
+    "definition": "Atak polegający na ponownym odtworzeniu wcześniej zarejestrowanej, autentycznej transmisji w celu wywołania błędnej reakcji.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-039",
+    "name": "Fałszywy MAYDAY",
+    "definition": "Nieautentyczny komunikat alarmowy wygenerowany przez człowieka, syntezator mowy albo system deepfake.",
+    "sourcePage": 2,
+    "category": "Łączność morska i procedury"
+  },
+  {
+    "id": "term-040",
+    "name": "SDR",
+    "definition": "Software-Defined Radio – radio, w którym znaczną część funkcji odbioru, filtracji i demodulacji realizuje oprogramowanie.",
+    "sourcePage": 2,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-041",
+    "name": "RTL-SDR",
+    "definition": "Popularna rodzina niedrogich odbiorników SDR wykorzystywanych do prototypowania i monitorowania pasm radiowych.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-042",
+    "name": "HackRF One",
+    "definition": "Szerokopasmowe urządzenie SDR zdolne do odbioru i nadawania, stosowane w testach i badaniach radiowych.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-043",
+    "name": "Antenna / antena",
+    "definition": "Element zamieniający energię elektryczną na falę elektromagnetyczną i odwrotnie.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-044",
+    "name": "Front-end radiowy",
+    "definition": "Część toru odbiorczego obejmująca antenę, filtry, wzmacniacze i układy częstotliwościowe przed konwersją do postaci cyfrowej.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-045",
+    "name": "Próbkowanie",
+    "definition": "Zamiana sygnału ciągłego na ciąg próbek cyfrowych wykonywanych z określoną częstotliwością.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-046",
+    "name": "Częstotliwość próbkowania",
+    "definition": "Liczba próbek sygnału pobieranych w ciągu sekundy, np. 16 kHz dla przetwarzania mowy.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-047",
+    "name": "PCM",
+    "definition": "Pulse Code Modulation – standardowa reprezentacja cyfrowego sygnału audio jako ciągu wartości amplitudy.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-048",
+    "name": "I/Q",
+    "definition": "Dwie składowe cyfrowej reprezentacji sygnału radiowego: in-phase i quadrature. Umożliwiają pełną analizę amplitudy i fazy.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-049",
+    "name": "Demodulacja",
+    "definition": "Odzyskiwanie informacji, np. głosu, z odebranej zmodulowanej fali nośnej.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-050",
+    "name": "Filtr pasmowy",
+    "definition": "Układ przepuszczający wybrany zakres częstotliwości i tłumiący pozostałe.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-051",
+    "name": "Doppler",
+    "definition": "Zmiana obserwowanej częstotliwości wynikająca z ruchu nadajnika, odbiornika lub obiektu odbijającego sygnał.",
+    "sourcePage": 3,
+    "category": "Sprzęt i tor radiowy"
+  },
+  {
+    "id": "term-052",
+    "name": "ASR",
+    "definition": "Automatic Speech Recognition – automatyczne rozpoznawanie mowy i zamiana transmisji głosowej na tekst.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-053",
+    "name": "VAD",
+    "definition": "Voice Activity Detection – wykrywanie fragmentów, w których występuje mowa, z pominięciem ciszy i części szumu.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-054",
+    "name": "Transkrypcja",
+    "definition": "Tekstowy zapis treści wypowiedzi radiowej.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-055",
+    "name": "Whisper",
+    "definition": "Rodzina modeli rozpoznawania mowy używana w materiałach MARIS.AI jako element transkrypcji i wstępnej annotacji.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-056",
+    "name": "Confidence score",
+    "definition": "Wskaźnik pewności modelu co do rozpoznanego słowa, segmentu lub klasy.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-057",
+    "name": "WER",
+    "definition": "Word Error Rate – miara błędów rozpoznawania mowy uwzględniająca zamiany, usunięcia i wstawienia słów.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-058",
+    "name": "Semantic WER",
+    "definition": "Zmodyfikowana miara błędów, która nadaje większą wagę pomyłkom istotnym operacyjnie, np. błędnym współrzędnym lub numerom kanałów.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-059",
+    "name": "Speaker fingerprinting",
+    "definition": "Rozpoznawanie lub weryfikacja mówcy na podstawie charakterystycznych cech głosu.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-060",
+    "name": "Biometria głosowa",
+    "definition": "Techniki identyfikacji lub weryfikacji osoby na podstawie parametrów jej mowy.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-061",
+    "name": "X-vector",
+    "definition": "Wektorowa reprezentacja cech głosu używana w systemach rozpoznawania mówcy.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-062",
+    "name": "ECAPA-TDNN",
+    "definition": "Architektura sieci neuronowej stosowana do tworzenia reprezentacji głosu i weryfikacji mówcy.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-063",
+    "name": "MFCC",
+    "definition": "Mel-Frequency Cepstral Coefficients – zestaw cech opisujących widmo mowy w sposób zbliżony do percepcji ludzkiego słuchu.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-064",
+    "name": "Formant",
+    "definition": "Rezonansowa składowa widma mowy związana z ułożeniem traktu głosowego.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-065",
+    "name": "Jitter",
+    "definition": "Krótkookresowa zmienność częstotliwości podstawowej głosu.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-066",
+    "name": "Shimmer",
+    "definition": "Krótkookresowa zmienność amplitudy głosu.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-067",
+    "name": "Deepfake audio",
+    "definition": "Syntetycznie wygenerowana lub zmodyfikowana wypowiedź imitująca głos konkretnej osoby.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-068",
+    "name": "TTS",
+    "definition": "Text-to-Speech – synteza mowy na podstawie tekstu.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-069",
+    "name": "Anti-spoofing",
+    "definition": "Zestaw metod wykrywających próby podszycia się, w tym syntezę głosu, replay i manipulację nagraniem.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-070",
+    "name": "Spoof score",
+    "definition": "Wynik liczbowy określający prawdopodobieństwo, że transmisja jest fałszywa lub zmanipulowana.",
+    "sourcePage": 3,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-071",
+    "name": "Deep score",
+    "definition": "Wynik detektora wskazujący prawdopodobieństwo obecności artefaktów deepfake lub syntezy mowy.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-072",
+    "name": "Bio score",
+    "definition": "Wynik związany z podobieństwem głosu do zarejestrowanego profilu mówcy.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-073",
+    "name": "RF score",
+    "definition": "W materiałach MARIS.AI: wynik oceniający zgodność parametrów radiowych transmisji z oczekiwanym nadajnikiem lub środowiskiem.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-074",
+    "name": "Ensemble",
+    "definition": "Połączenie wyników wielu modeli w celu uzyskania stabilniejszej i dokładniejszej decyzji.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-075",
+    "name": "Fusion / fuzja wyników",
+    "definition": "Łączenie danych z kilku źródeł, np. biometrii głosowej, detekcji deepfake i cech radiowych.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-076",
+    "name": "Y-layer fusion",
+    "definition": "Warstwa decyzyjna opisana w architekturze MARIS.AI, agregująca wyniki wielu detektorów do końcowego spoof score.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-077",
+    "name": "CNN",
+    "definition": "Convolutional Neural Network – sieć neuronowa dobrze nadająca się do analizy lokalnych wzorców w spektrogramach.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-078",
+    "name": "LSTM",
+    "definition": "Long Short-Term Memory – sieć rekurencyjna przeznaczona do analizy zależności czasowych.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-079",
+    "name": "MHA",
+    "definition": "Multi-Head Attention – mechanizm uwagi analizujący równolegle różne zależności w sygnale.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-080",
+    "name": "MGATF",
+    "definition": "Multi-Granularity Adaptive Time-Frequency – moduł analizujący sygnał w wielu skalach czasu i częstotliwości.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-081",
+    "name": "Spektrogram",
+    "definition": "Graficzna lub numeryczna reprezentacja energii sygnału w funkcji czasu i częstotliwości.",
+    "sourcePage": 4,
+    "category": "Analiza mowy i sztuczna inteligencja"
+  },
+  {
+    "id": "term-082",
+    "name": "Latency / opóźnienie",
+    "definition": "Czas od odebrania sygnału do wygenerowania wyniku lub alertu. W systemach alarmowych powinien być możliwie krótki.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-083",
+    "name": "Edge inference",
+    "definition": "Uruchamianie modelu bezpośrednio na urządzeniu brzegowym, blisko źródła sygnału, zamiast w odległej chmurze.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-084",
+    "name": "Real-time",
+    "definition": "Przetwarzanie danych z opóźnieniem wystarczająco małym, by system mógł wspierać bieżące działania operatora.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-085",
+    "name": "EER",
+    "definition": "Equal Error Rate – punkt, w którym odsetek fałszywych akceptacji jest równy odsetkowi fałszywych odrzuceń; często używany do oceny biometrii.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-086",
+    "name": "Recall",
+    "definition": "Czułość detektora, czyli odsetek prawdziwych zdarzeń wykrytych przez system.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-087",
+    "name": "False positive",
+    "definition": "Fałszywy alarm: system zgłasza zagrożenie, mimo że transmisja jest prawidłowa.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-088",
+    "name": "False negative",
+    "definition": "Niewykryte zagrożenie: system uznaje fałszywą lub niebezpieczną transmisję za prawidłową.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-089",
+    "name": "Hard veto gate",
+    "definition": "Mechanizm bezpieczeństwa, który uniemożliwia, aby wynik antyspoofingu zablokował alarm o bardzo wysokim prawdopodobieństwie rzeczywistego distress.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-090",
+    "name": "Advisory-only",
+    "definition": "Model działania, w którym system przedstawia operatorowi ocenę i rekomendację, ale nie wykonuje samodzielnie działań operacyjnych.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-091",
+    "name": "Human-in-the-loop",
+    "definition": "Proces, w którym człowiek zatwierdza, koryguje lub odrzuca decyzję systemu AI.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-092",
+    "name": "Federated learning",
+    "definition": "Uczenie modelu na danych znajdujących się w wielu lokalizacjach bez centralnego przesyłania surowych nagrań.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-093",
+    "name": "Shadow mode",
+    "definition": "Tryb wdrożenia, w którym system analizuje transmisje, lecz jego wyniki nie wpływają jeszcze na operacje.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-094",
+    "name": "TensorRT",
+    "definition": "Środowisko optymalizacji i uruchamiania modeli AI na sprzęcie NVIDIA.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-095",
+    "name": "INT8 quantization",
+    "definition": "Kwantyzacja modelu do 8-bitowej reprezentacji liczb, zmniejszająca wymagania obliczeniowe i opóźnienie.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-096",
+    "name": "Jetson AGX Orin",
+    "definition": "Platforma obliczeniowa NVIDIA przeznaczona do uruchamiania modeli AI na brzegu sieci.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-097",
+    "name": "Audit trail",
+    "definition": "Chronologiczny, niezmienny zapis danych wejściowych, wyników i działań operatora.",
+    "sourcePage": 4,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  },
+  {
+    "id": "term-098",
+    "name": "Data provenance",
+    "definition": "Pochodzenie danych i pełna historia ich przetwarzania, wersjonowania oraz użycia do trenowania modelu.",
+    "sourcePage": 5,
+    "category": "Parametry jakości, opóźnienie i wdrożenie"
+  }
+]

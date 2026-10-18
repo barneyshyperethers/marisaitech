@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "Original seven ship systems and a mesh satellite retained",
+    "Square wall and one hull-length gap use actual hull bounds",
+    "Camera frames scene, ship and wall on desktop and phone aspect ratios",
+    "Four 3D tile centers raycast to correct dialogs, images and source notes",
+    "Keyboard-equivalent buttons, readable-font toggle and focus return",
+    "Descriptions and satellite dialog survive simulated CDN failure"
+  ],
+  "limits": [
+    "No browser, GPU rendering, real 2D canvas text layout, CSS or visual screenshot verification."
+  ],
+  "dimensions": {
+    "shipLength": 15.934558391571045,
+    "wallWidth": 15.934558391571045,
+    "wallHeight": 15.934558391571045,
+    "gap": 15.934558391571045
+  }
+}

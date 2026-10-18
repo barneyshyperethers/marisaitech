@@ -1,0 +1,22 @@
+{
+  "mode": "built-in imagegen",
+  "transparent_background": false,
+  "assets": [
+    {
+      "file": "grafiki/plugin-soar.png",
+      "prompt": "Use case: ads-marketing. Asset type: landscape editorial illustration for a MARIS AI maritime security plugin detail dialog, 3:2 composition. Create one photorealistic image of a maritime fleet cybersecurity operations room at blue hour, two human analysts seen from behind at dark desks, realistic monitors showing abstract incident flow nodes and a vessel silhouette without readable text, large window overlooking a container ship at a port. Main idea is coordinated incident response and orchestration. Premium real photography aesthetic, believable equipment, navy black palette, subtle cyan and emerald status lights, crisp detail, restrained cinematic light. No logos, no text, no watermarks, no invented brand. This is a concept illustration, not evidence of a real installation."
+    },
+    {
+      "file": "grafiki/plugin-fusion.png",
+      "prompt": "Use case: ads-marketing. Asset type: landscape editorial illustration for a MARIS AI radio signal fusion plugin detail dialog, 3:2 composition. One photorealistic view from a coastal vessel traffic observation facility: in the foreground a realistic compact unbranded industrial edge computer with two software defined radio receivers and short cables, behind it a window with a VHF antenna array and a rotating maritime radar on a neighboring roof, a working cargo ship offshore. Subject communicates local radio AIS and DSC signal correlation. Navy and dark teal, green equipment LEDs, realistic late afternoon marine haze, premium technical photography. No logos, no readable text, no impossible radar beams or dense fantasy overlays, no watermark."
+    },
+    {
+      "file": "grafiki/plugin-triage.png",
+      "prompt": "Use case: ads-marketing. Asset type: landscape editorial illustration for a MARIS AI maritime AI alert triage plugin detail dialog, 3:2 composition. Photorealistic close angled view of a maritime security analyst workstation with an operator's hand on a keyboard, two unbranded monitors displaying abstract vessel tracks, a simple alert list and one emphasized alert card with colored priority markers but absolutely no readable text. A container vessel visible through the port operations room window. Clear visual focus on interpreting and prioritizing an alert; believable interface, navy palette, cold blue monitor light, a single amber highlight, sophisticated documentary technology photography. No logos, no watermarks, no science fiction, no robot heads."
+    },
+    {
+      "file": "grafiki/plugin-voice.png",
+      "prompt": "Use case: ads-marketing. Asset type: landscape editorial illustration for a MARIS AI maritime voice intelligence plugin detail dialog, 3:2 composition. One photorealistic close view on the bridge of a merchant ship: an unbranded marine VHF radio with a coiled cord microphone in the foreground, an officer's hand holding the microphone, adjacent console display with an audio waveform and abstract transcript lines without readable text, sea and ship bow seen through bridge windows. Main idea is marine voice transcription and operator support. Realistic maritime instruments, navy and cyan palette, gentle daylight and blue console glow, premium documentary photography. No logos, no readable words, no watermarks, no fantasy equipment."
+    }
+  ]
+}

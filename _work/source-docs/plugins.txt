@@ -1,0 +1,1270 @@
+
+--- PAGE 1 ---
+ 
+ 
+MARIS.AI 
+Przewodnik po pluginach i sub-systemach 
+Cztery pluginy cyberbezpieczeństwa morskiego, warstwy wspólne i 44 narzędzia wewnętrzne — w 
+jednym miejscu: co robią, dla kogo, w jakiej kolejności powstają, jak zarabiają i gdzie leżą granice 
+ochrony IP. 
+Spis treści 
+1. Portfel w pigułce 
+2. Cztery pluginy — karty skrócone 
+3. Warstwy wspólne i sub-systemy przekrojowe 
+4. Sub-systemy wewnętrzne i komplementarne 
+5. Sekwencja wdrożenia 
+6. Ekonomika portfela 
+7. Własność intelektualna, suwerenność i model realizacji 
+8. Wejście na rynek — pilotaże, kanały, komunikacja 
+9. Słownik skrótów  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+--- PAGE 2 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+1. Portfel w pigułce 
+MARIS.AI rozwija portfel czterech komplementarnych pluginów cyberbezpieczeństwa morskiego, oparty na 
+wspólnych warstwach przekrojowych (rdzeń kryptograficzny, zaufanie do pozycji i czasu, jakość danych, fuzja) 
+oraz na 44 narzędziach wewnętrznych i komplementarnych, które pozwalają te pluginy wytwarzać, testować, 
+sprzedawać i rozliczać. Pluginy wchodzą na rynek w ustalonej kolejności (waterfall): ta sama sekwencja 
+porządkuje ścieżkę certyfikacyjną DNV oraz wejście do kanału stoczniowego (Forum Okrętowe / SEA Europe). 
+Plugin 
+Rola w łańcuchu 
+Warstwa 
+Dojrzałość 
+Model przychodu 
+1. Maritime SOAR Content 
+Pack 
+Odpowiedź — 
+automatyzacja eskalacji i 
+raportowania 
+Software, IT lądowe 
+MVP 1 · 8–12 tyg. do 
+rynku 
+Subskrypcja przez 
+marketplace 
+2. SDR-AIS Fusion Edge 
+Appliance 
+Detekcja — wykrycie i ocena 
+wiarygodności konfliktu 
+źródeł 
+Urządzenie brzegowe 
++ wariant pokładowy 
+MVP 2 · 12–16 tyg. · 
+ścieżka DNV 
+Sprzęt + 
+subskrypcja + 
+pakiety DA i FPA 
+3. LLM-SOC Maritime Alert 
+Triage API 
+Klasyfikacja — priorytet i 
+rekomendowane działanie 
+Mikroserwis: chmura 
+lub on-premise 
+MVP 3 · 10–14 tyg. · 
+najwyższy ARR 
+Per zapytanie, per 
+stanowisko, 
+licencja 
+4. Maritime Voice 
+Intelligence Layer 
+Głos — transkrypcja, 
+wsparcie operatora, 
+archiwum 
+Edge (audio) + 
+chmura (alert) 
+Produkt wiodący · 
+najwyższa 
+ekspozycja 
+regulacyjna 
+SaaS w 4 
+warstwach + OEM 
+revenue-share 
+ 
+Jeden łańcuch zamiast czterech produktów 
+Trzy pluginy obsługują ten sam, najwyżej oceniany w badaniu popytu sygnał — konflikt AIS/RF/radar (priorytet nr 
+1, ocena 9/10) — na trzech kolejnych warstwach. W rozmowach z klientem i inwestorem pokazujemy je jako jeden 
+przepływ „detekcja › klasyfikacja › odpowiedź”, a nie trzy odrębne produkty. To najsilniejszy pojedynczy 
+argument różnicujący wobec konkurencji, która sprzedaje same feedy danych. 
+Sygnał 
+AIS, RF, DSC, GNSS, 
+głos 
+» 
+Detekcja 
+SDR-AIS · PNT-Trust » 
+Klasyfikacja 
+LLM-SOC Triage API » 
+Odpowiedź 
+SOAR Content Pack 
+» 
+Dowód 
+raport, pakiet 
+dowodowy 
+Voice Intelligence Layer zasila ten sam łańcuch od strony komunikacji głosowej VHF/GMDSS (transkrypt jako zdarzenie STIX 2.1). 
+Zasady wspólne całego portfela 
+–​ Wspólna oś danych. Wszystkie pluginy wymieniają zdarzenia w standardach STIX 2.1 i OCSF; tam, gdzie to 
+potrzebne, polityki udostępniania danych egzekwuje warstwa Gaia-X/EDC i ODRL 2.2. 
+–​ Ochrona metody. Autorska metoda korelacji SDR+AIS (oznaczenie wewnętrzne FUS-10) nie jest ujawniana 
+poza zespołem — na zewnątrz wychodzi wyłącznie wynik w formacie STIX 2.1. Przewodnik opisuje ją 
+wyłącznie funkcjonalnie. 
+–​ Marketplace i kanał partnerski są infrastrukturą dystrybucji, a nie kanałem sprzedaży samym w sobie. 
+–​ Kalibracja wobec popytu. Od 25.08.2026 portfel jest ustawiony pod obszary o najszybciej monetyzowalnej 
+pilności: integralność sytuacyjną AIS/RF/radar i niezależną walidację dostawców danych. 
+–​ Test drogiego retrofitu. To, co utrwala się w danych, w schemacie zdarzeń albo w łańcuchu zaufania 
+zainstalowanego urządzenia, musi powstać przed pierwszym klientem; resztę można dodać później 
+konfiguracją. 
+Strona 2 z 17 
+
+
+--- PAGE 3 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+2. Cztery pluginy — karty skrócone 
+Każda karta odpowiada na te same pytania: czym jest plugin, kto go kupuje, gdzie działa, co robi i ile kosztuje 
+według listy globalnej. Ceny listowe są w EUR netto; ich status wynika z weryfikacji wobec bazy projektowej 
+(BAZA, 22.09.2026). 
+2.1 Maritime SOAR Content Pack 
+MVP 1 · 8–12 TYGODNI DO RYNKU · SOFTWARE, IT LĄDOWE · BEZ ZALEŻNOŚCI SPRZĘTOWEJ 
+Gotowy pakiet playbooków automatyzacji (CACAO 2.0) oraz parserów zdarzeń (OCSF, STIX 2.1) instalowany w 
+platformie SIEM/SOAR, którą klient już ma: Cortex XSOAR, Microsoft Sentinel lub Splunk ES. Wiedza regulacyjna 
+z zakresu IMO, SOLAS, PSC, MARPOL i BIMCO jest zakodowana w logice automatyzacji, więc klient nie potrzebuje 
+własnego eksperta maritime. To jedyny produkt portfela, który nie wymaga zmiany architektury ani opinii 
+prawnej przed wejściem do żadnego kanału — dlatego otwiera sekwencję i niesie najniższe ryzyko 
+certyfikacyjne. 
+Pole 
+Treść 
+Kto kupuje 
+Kierownik SOC u dostawcy usług bezpieczeństwa (MSSP maritime — główny kanał wczesnego ARR), CISO lub 
+IT lead operatora albo portu z działającym SIEM/SOAR. 
+Gdzie działa 
+Wyłącznie w środowisku SIEM/SOAR klienta (on-premise lub chmura); instalacja jednym kliknięciem z 
+marketplace. MARIS dostarcza treść, nie zarządza infrastrukturą klienta. 
+Argument 
+„Wiedza morska zakodowana w playbookach — wasz SOC obsłuży incydent AIS, GMDSS czy PSC bez własnego 
+eksperta maritime.” 
+Rola w portfelu 
+Kanał dostarczenia raportów Data Assurance i miejsce, w którym alerty Fusion Platform/API zamieniają się w 
+działanie. 
+ 
+Funkcje kluczowe 
+–​ Korelacja AIS/OSINT: alerty przy anomaliach kursu i prędkości oraz przerwach transmisji, z weryfikacją 
+krzyżową wobec bazy inspekcji PSC. 
+–​ Playbook GMDSS Distress/Urgency: eskalacja do MRCC, powiadomienie armatora i klubu P&I, archiwizacja 
+komunikacji Ch16/Ch70 zgodnie z SOLAS IV i automatyczny raport PSC. 
+–​ Playbook AIS Spoofing Detection & Response: głosowanie konsensusowe wielu źródeł i klasyfikacja 
+zagrożenia HIGH / MEDIUM / LOW. 
+–​ Playbook Environmental Incident MARPOL: raport w formacie EMSA EMCIP; generator raportów compliance 
+IMO/BIMCO (PDF, DOCX) gotowych na inspekcję PSC. 
+Tier 
+Cena listowa 
+Zakres 
+Starter 
+4 500 EUR/rok 
+5 playbooków + 30 dni wsparcia onboardingowego 
+Professional 
+9 000 EUR/rok 
+Pełne portfolio + własne mapowania OCSF + SLA 8 h 
+Enterprise (kanał integratora) 
+16 000 EUR/rok 
+White-label + priorytetowe aktualizacje + helpdesk SOC 24/7 
+ 
+Status: cennik POTWIERDZONY (zgodny z BAZA). Otwarte: warunki publikacji w XSOAR Marketplace — repozytorium 
+treści społecznościowych działa na licencji MIT, więc wybór ścieżki pakietu płatnego rozstrzyga, czy treść nie stanie się 
+otwarta (DO WERYFIKACJI). Realna ochrona treści to licencja, kadencja aktualizacji i tajemnica progów scoringu. 
+Strona 3 z 17 
+
+
+--- PAGE 4 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+2.2 SDR-AIS Fusion Edge Appliance 
+MVP 2 · 12–16 TYGODNI · ŚCIEŻKA DNV · URZĄDZENIE BRZEGOWE + WARIANT POKŁADOWY VESSEL EDGE 
+Urządzenie brzegowe na platformie NVIDIA Jetson Orin Nano z dwoma odbiornikami SDR, które w czasie 
+rzeczywistym koreluje ślady AIS i sygnały VHF DSC (kanał 70) — bez zależności od zewnętrznych źródeł danych. 
+Adresuje porty, terminale offshore i firmy pilotażowe, które nie mają radaru klasy Tier-1 ani budżetu na systemy 
+tej klasy. Komercyjnie urządzenie jest rozpakowane na trzy niezależnie sprzedawalne linie: Integrity Monitoring 
+(alerty konfliktu AIS/RF/radar, scoring wiarygodności, audytowalne uzasadnienie alarmu), Data Assurance i 
+Fusion Platform/API (obie opisane w rozdziale 3). 
+Pole 
+Treść 
+Kto kupuje 
+Bezpieczeństwo portu, VTS, PFSO, operator terminalu offshore, firma pilotażowa; dla Data Assurance także 
+instytucje publiczne bez zakupu urządzenia. 
+Gdzie działa 
+Port lub terminal (zasilanie stałe, integracja z VTS przez IEC 61162-450); wariant pokładowy dla armatorów 
+jako SaaS-first z opcjonalnym sprzętem; kanał OEM dla integratorów przy wolumenie powyżej 10 szt. 
+Argument 
+„Zdolność wykrywania spoofingu AIS i jednostek-widm, którą systemy Tier-1 dają od ok. 500 000 EUR, w 
+urządzeniu brzegowym.” 
+Czym nie jest 
+Monitorem integralności, a nie źródłem nawigacyjnym dla ECDIS. 
+ 
+Funkcje kluczowe 
+–​ Dekodowanie AIS (161,975 i 162,025 MHz) i VHF DSC (156,525 MHz) z torem sygnałowym dopasowanym do 
+propagacji Bałtyku i Morza Północnego. 
+–​ Fuzja śladów do 200 jednoczesnych celów z obsługą torów-widm i dryftu zegara; docelowa latencja fuzji 
+poniżej 50 ms. 
+–​ Detekcja spoofingu AIS i ciszy nadawczej (dark ship) — cele jakościowe P = 0,92 / R = 0,89 (docelowe, do 
+potwierdzenia w testach). 
+–​ Wyjście MQTT/REST, alerty STIX 2.1, zgodność z IEC 61162-450; współpraca z konsolami VCS i OpenCPN. 
+Strumień 
+Cena listowa 
+Uwagi 
+Sprzęt — sprzedaż bezpośrednia 
+3 800 EUR/szt. 
+Koszt BOM ok. 900 EUR; marża ok. 76% 
+Sprzęt — kanał OEM 
+2 200 EUR/szt. 
+Wyłącznie przez integratora, wolumen > 10 szt. 
+Subskrypcja modeli ML 
+1 400 EUR/rok 
+Aktualizacje kwartalne; zakładany churn < 15% 
+Usługi profesjonalne 
+1 200 EUR/dzień 
+Instalacja, kalibracja, szkolenie operatorów 
+Pakiet portowy Integrity Monitoring 
+7 600 EUR rok 1 
+Urządzenie + modele + 2 dni wdrożenia; od roku 2: 1 400 
+EUR/rok 
+ 
+Status IP: metoda korelacji jest chroniona jako tajemnica przedsiębiorstwa; dokumentacja nie zawiera numeru 
+zgłoszenia patentowego, więc do czasu jego uzyskania obowiązuje sformułowanie „planowane zgłoszenie” 
+(NIEROZSTRZYGNIĘTE). Zatoka Perska: sprzedaż zawieszona do oceny kontroli eksportu wg rozporządzenia (UE) 
+2021/821 (DO WERYFIKACJI). OEM do integratorów konsol VTS: zablokowany do pierwszej referencji i potwierdzonego 
+zgłoszenia. 
+2.3 LLM-SOC Maritime Alert Triage API 
+MVP 3 · 10–14 TYGODNI · NAJWYŻSZY ARR · MIKROSERWIS REST 
+Mikroserwis (POST /triage), który przyjmuje surowy alert — anomalię AIS, wywołanie DSC, log pokładowego IDS 
+lub zdarzenie konsoli VCS — i w mniej niż dwie sekundy zwraca klasyfikację STIX 2.1 z poziomem pewności, 
+rekomendowanym działaniem odniesionym do wytycznych IMO MSC-FAL.1/Circ.3 oraz priorytetem eskalacji. 
+Strona 4 z 17 
+
+
+--- PAGE 5 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+Model bazowy (Llama 3.1 8B) jest dostrojony na suwerennym korpusie morskim (raporty wypadkowe, bazy 
+incydentów, transkrypty VHF) z syntetyczną augmentacją rzadkich scenariuszy — dostrojenie domenowe 
+ogranicza „halucynacje regulacyjne” typowe dla ogólnych modeli. 
+Pole 
+Treść 
+Kto kupuje 
+Kierownik SOC operatora lub MSSP, fleet security manager, dział Loss Prevention klubu P&I. 
+Gdzie działa 
+Docker/Kubernetes w chmurze lub on-premise u klienta (zależnie od wymogu suwerenności danych); 
+także jako moduł AI Assist w konsoli operatora. 
+Priorytet rozwoju 
+Anomalia AIS jako typ alertu nr 1 — LLM-SOC czerpie największą dźwignię jako konsument sygnału z 
+SDR-AIS. Golden test set: 500 alertów, zgodność ekspertów kappa > 0,80. 
+Kierunek 
+Wariant dwuwarstwowy (KIERUNKOWE): warstwa wiedzy i rozumowania oraz warstwa produkcyjna/edge; 
+sekwencja MVP › pilot w VTS › produkcja z dokumentacją AI Act i NIS2. 
+ 
+Model 
+Cena listowa 
+Profil klienta 
+Per triage (pay-as-you-go) 
+0,20–0,45 EUR/zapytanie 
+Małe porty, MSSP testujący platformę 
+Subskrypcja per stanowisko 
+3 600 EUR/rok/stanowisko 
+Operatorzy SOC, zespoły bezpieczeństwa flot 
+Licencja on-premise 
+24 000–28 000 EUR/rok 
+Duzi armatorzy, towarzystwa klasyfikacyjne 
+OEM revenue share 
+6–12% 
+White-label w konsolach producentów 
+ 
+Zależności: pilot w VTS zależy od rozstrzygnięcia dostępu do korpusu domenowego (część źródeł NIEROZSTRZYGNIĘTA 
+lub DO WERYFIKACJI) oraz od demonstratora SDR-AIS. Projekt MCEI (rozdział 4, grupa H) jest pomyślany jako źródło 
+danych dla tego korpusu. 
+2.4 Maritime Voice Intelligence Layer 
+PRODUKT WIODĄCY · NAJWYŻSZA EKSPOZYCJA REGULACYJNA · ASR/TTS DLA VHF I GMDSS 
+Warstwa rozpoznawania i syntezy mowy dla komunikacji VHF i GMDSS: transkrypcja na żywo, wsparcie operatora 
+(AI Assist) i archiwizacja zgodna z SOLAS IV. Analiza 28 konkurentów globalnych nie wykazała żadnego podmiotu 
+z certyfikacją morską w tej kategorii, stąd pozycjonowanie jako pierwszego potencjalnie certyfikowalnego 
+rozwiązania. Koncepcja nie zakłada dodatku do istniejącego sprzętu, lecz komponent, który producenci 
+wyposażenia okrętowego (SEA Europe) wbudowują już na etapie projektowania radiotelefonów i systemów 
+mostkowych. 
+Pole 
+Treść 
+Kto kupuje 
+Loss Prevention klubów P&I (w tym flota azjatycka), armatorzy z wielojęzycznymi załogami; w kanale OEM — 
+producenci radiostacji i stocznie. 
+Gdzie działa 
+Edge (przetwarzanie audio) + chmura (alert STIX 2.1); moduł w konsoli operatora; wariant 
+on-premise/air-gapped bez tranzytu do chmury MARIS. 
+Ochrona danych 
+Diaryzacja funkcjonalna (Speaker_1, Speaker_2), nie tożsamościowa; identyfikacja głosu wyłącznie po 
+odrębnej DPIA i z podstawą prawną (art. 9 RODO). 
+Ścieżka OEM 
+Sześć faz: NDA › specyfikacja komponentu › integracja w cyklu projektowym › certyfikacja › produkcja 
+pilotażowa › produkcja seryjna z rozliczeniem revenue-share. 
+ 
+Warstwa 
+Cena listowa 
+Segment 
+Pay-per-use 
+0,10–0,18 EUR/min 
+Wejście niskoprogowe, pilotaż przez API 
+Tiery roczne 
+2 400 / 4 800 / 22 000 EUR/rok 
+Mała flota / średnia flota / Tier 1 (SaaS) 
+Strona 5 z 17 
+
+
+--- PAGE 6 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+Warstwa 
+Cena listowa 
+Segment 
+On-premise / air-gapped 
+do 32 000 EUR/rok 
+Suwerenność danych po stronie klienta 
+OEM revenue-share 
+8–15% 
+Producenci wyposażenia (SEA Europe) 
+ 
+Pozycja w sekwencji: ostatnia — wejście OEM dopiero po opinii dotyczącej IACS UR E26/E27. Na obecnym etapie 
+strategia ogranicza prace nad Voice do elementów nieodwracalnych: archiwum, proweniencji i wymagań OEM. 
+Producenci SEA Europe nie potwierdzili dotąd modelu OEM. 
+3. Warstwy wspólne i sub-systemy przekrojowe 
+Warstwy wspólne nie są osobnymi produktami do sprzedaży. Są rdzeniem, który każdy plugin implementuje w tej 
+samej postaci, dzięki czemu portfel zachowuje spójność kontraktów danych, kryptografii i dowodów, a wspólne 
+pakiety usługowe (Data Assurance, Fusion Platform/API) mogą być sprzedawane niezależnie od urządzenia. 
+3.1 Rdzeń startowy MCC v0 — wariant PQC-ready 
+Odpowiada na pytanie, jaka funkcjonalność post-kwantowa musi znaleźć się w kodzie każdego pluginu przed 
+pierwszym klientem. Rozstrzygnięcie jest kosztowe, nie doktrynalne: część zdolności PQC można dodać później 
+tanio, a część utrwala się w danych, schemacie zdarzeń lub łańcuchu zaufania urządzenia i po wdrożeniu staje 
+się zmianą łamiącą. Rdzeń opiera się wyłącznie na publicznych standardach NIST (FIPS 203/204/205, SP 
+800-208, SP 800-227) i CycloneDX 1.6; żaden plugin nie implementuje własnej kryptografii — tylko uznane 
+biblioteki. 
+Wym. 
+Nazwa 
+Na czym polega 
+K1 
+Abstrakcja prymitywów 
+Kod domenowy nie wywołuje konkretnego algorytmu — tylko wymienialne interfejsy. 
+K2 
+Rejestr i polityka 
+Dopuszczone zestawy algorytmów w podpisanym, wersjonowanym pliku polityki poza 
+kodem. 
+K3 
+Hybrydowość domyślna 
+Algorytm klasyczny i post-kwantowy jednocześnie; projekt pod większe parametry. 
+K4 
+Fail-closed 
+Brak cichego powrotu do trybu klasycznego; zmiana poziomu ochrony wymaga decyzji 
+człowieka. 
+K5 
+CBOM z buildu 
+Każdy build generuje inwentarz kryptograficzny obok SBOM. 
+K6 
+Telemetria w schemacie 
+Stan kryptografii w schemacie zdarzeń od v0 — schemat jest kontraktem z SIEM klienta. 
+K7 
+Cykl życia klucza 
+Ponowne kluczowanie, limity ponownego użycia, testowana zeroizacja. 
+K8 
+Nagłówek danych w 
+spoczynku 
+Każdy trwały artefakt zapisany z identyfikatorem zestawu i klucza — umożliwia 
+bezpieczne wycofanie migracji. 
+K9 
+Bramka CI 
+Testy negatywne, próby wymuszenia obniżenia ochrony, pomiar narzutu w potoku 
+budowania. 
+K10 
+Rozdzielenie płaszczyzn 
+Zarządzanie kryptografią osobnym, uwierzytelnionym kanałem, odrębnym od danych. 
+ 
+Granica komunikacyjna: rdzeń nie jest twierdzeniem o zgodności z CNSA 2.0 ani o walidacji FIPS 140-3. Dashboard 
+crypto-posture świadomie pozostaje poza v0. Status całości: KIERUNKOWE. 
+Strona 6 z 17 
+
+
+--- PAGE 7 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+ 
+3.2 Wspólny rejestr algorytmów crypto-agility 
+Rejestr to warstwa widoczności złożona z trzech elementów — inwentarza, polityki i bramki decyzyjnej — 
+wspólna dla portfela. Zasada nadrzędna: rejestr opisuje i sygnalizuje, a migrację wykonują mechanizmy w 
+pluginach. Nie powstaje dodatkowy agent na urządzeniu klienta, a klient nie musi niczego migrować przed 
+zakupem — produkt ma wartość już przy zerowym postępie migracji. Pierwszy komunikat handlowy: „co masz i 
+czego nie widzisz”. Wymagania K2 i K6 wdrożone w każdym pluginie w tej samej postaci domykają lukę 
+wspólnego rejestru bez osobnej pozycji budżetowej. 
+Rejestru nie przedstawiamy jako „platformy PQC”; jego cena pozostaje NIEROZSTRZYGNIĘTA. 
+3.3 PNT-Trust — warstwa zaufania do pozycji i czasu 
+Teza: w latach 2025–2026 ciężar innowacji w nawigacji satelitarnej przesunął się z dokładności na zaufanie do 
+sygnału i odporność na zakłócenia — na tle eskalacji zagłuszania i spoofingu na Bałtyku (m.in. 2732 przypadki w 
+Polsce w samym styczniu 2025 r.). Galileo OSNMA działa operacyjnie od 24.07.2025, a usługa uwierzytelniania 
+sygnału SAS (pasmo E6) weszła we wrześniu 2026 r. w fazę rozstrzygającą. PNT-Trust zamienia te usługi w 
+podpisany wskaźnik poziomu integralności pozycji (PIL). 
+Warstwa 
+Funkcja 
+0 — tor antenowy i RF 
+Antena wielopasmowa (E1/L1, E5a/E5b, E6) z filtracją; na brzegu wspólny maszt z anteną VHF 
+urządzenia. 
+1 — odbiornik uwierzytelniający 
+Komercyjny odbiornik z OSNMA i mitygacją zakłóceń; status uwierzytelnienia per satelita. 
+2 — własny tor SDR/DSP 
+Niezależne od dostawcy odbiornika detektory zakłóceń i spoofingu na próbkach sygnału. 
+3 — ocena zaufania i eksport 
+Agregacja do wskaźnika PIL (PIL-1 … PIL-3) i eksport jako zdarzenie podpisane. 
+ 
+OSNMA chroni przed fałszowaniem danych nawigacyjnych, nie przed zagłuszaniem. Wątki obronne (anteny CRPA, 
+lokalizacja zagłuszacza) są zamknięte bramką Tor B. Cena PNT-Trust: NIEROZSTRZYGNIĘTA. 
+3.4 Data Assurance (DA) — niezależna walidacja dostawców danych 
+Usługa właścicielska SDR-AIS, ale niewymagająca zakupu urządzenia: niezależna ocena jakości feedów AIS/RF 
+dla uzgodnionego akwenu (kompletność, opóźnienie, niespójne pozycje, luki, zakłócenia GNSS/AIS), raport 
+odchyleń per dostawca i rekomendacje kalibracji. MARIS nie jest dostawcą ocenianych feedów; jeśli urządzenie 
+MARIS jest jednym ze źródeł, raport mówi o tym wprost. Raport nie jest certyfikacją ani opinią biegłego. 
+Odbiorcy: porty, VTS, administracja, kluby P&I i ubezpieczyciele, banki i czarterujący, platformy AI. 
+Kod 
+Pakiet 
+Cena listowa 
+DA-1 
+Benchmark akwenu (jednorazowy, 6–8 tygodni pomiaru) 
+6 000 EUR / akwen 
+DA-2 
+Subskrypcja jakości akwenu 
+4 800 EUR / rok / akwen 
+DA-3 
+Punkt referencyjny uwierzytelnionej pozycji (PNT-Trust) 
+2 400 EUR / rok / urządzenie 
+DA-4 
+Raport zdarzeniowy (np. dla sporu) 
+1 800 EUR / raport 
+DA-5 
+Raport integralności portfela statków 
+180 EUR / statek / rok, min. 3 600 EUR 
+3.5 Fusion Platform/API (FPA) — fuzja jako usługa 
+Warstwa normalizacji i fuzji dla VTS, centrów operacyjnych floty, SOC i analityki portowej, dostępna niezależnie 
+od zakupu urządzenia: ujednolicone tory z wielu sensorów, ocena wiarygodności toru, alerty konfliktu źródeł. 
+Dostarczana z chmury MARIS w UE z separacją tenantów; on-premise wyłącznie na zaplombowanym sprzęcie 
+Strona 7 z 17 
+
+
+--- PAGE 8 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+MARIS — nie istnieje wariant „oprogramowanie na serwerze klienta”. Limity zapytań, agregacja ocen i monitoring 
+wzorców odpytywania chronią przed odtworzeniem metody przez masowe zapytania. 
+Kod 
+Pakiet 
+Cena listowa 
+FPA-0 
+Sandbox — klucz testowy, dane syntetyczne, 30 dni 
+0 EUR 
+FPA-1 
+API Starter — 1 strumień, do 200 celów 
+3 600 EUR / rok 
+FPA-2 
+API Professional 
+9 000 EUR / rok 
+FPA-3 
+API Enterprise / centrum operacyjne 
+24 000 EUR / rok 
+FPA-4 
+Wolumen partnerski (platformy AI i analityczne) 
+2,00 EUR / 1 000 zapytań, min. 12 000 EUR / rok 
+ 
+Wszystkie ceny DA i FPA mają status KIERUNKOWE (wymagana decyzja PM/CFO). Koszt infrastruktury FPA na tenanta 
+jest nieoszacowany (DO WERYFIKACJI). Ocena feedów komercyjnych może wymagać zgody ich dostawców. 
+3.6 Zewnętrzne źródła klucza — QKD, EKMS, NKMIS 
+Ocena z 02.10.2026: metodyki kwantowej dystrybucji klucza (QKD), elektronicznego zarządzania kluczami 
+(EKMS/KMI) i natowskiej specyfikacji NKMIS były w dokumentacji obecne w ok. 38% metodycznie i w 0% 
+nazwowo (SZACUNKOWE). Kierunek: w v0 powstają wyłącznie „gniazda” na zewnętrzne źródło i zarządcę klucza 
+(wymagania KZ1, KZ2, KZ4), bez implementacji samych źródeł. QKD nie zastępuje PQC. EKMS i NKMIS służą jako 
+materiał porównawczy i kierunek dla segmentu obronnego (Tor B); realną wartość krajową widać w 
+demonstracjach z infrastrukturą PIONIER-Q oraz w liniach grantowych związanych z EuroQCI. 
+3.7 Wspólny proces produkcyjny 
+Wszystkie pluginy przechodzą przez ten sam proces wytwórczy: macierz odpowiedzialności RACI, środowiska i 
+ścieżkę promocji wydań, wspólną bramę CI/CD (P1–P10), pakiet wydania z wersjonowaniem, zestawy danych 
+testowych, obsługę podatności zgodną z Cyber Resilience Act (PSIRT), macierz śledzenia „wymaganie › test › 
+dowód”, cele SLO i rejestr decyzji blokujących produkcję. Kontrakty interfejsów (OpenAPI/AsyncAPI) mają zostać 
+zamrożone przed Sprintem 1. 
+4. Sub-systemy wewnętrzne i komplementarne 
+Katalog obejmuje dwa rodzaje oprogramowania: narzędzia wewnętrzne zespołu oraz komponenty 
+komplementarne wobec pluginów i warstw wspólnych. Liczy 44 pozycje w ośmiu grupach (A–F z wersji 1 oraz G 
+— Baza Partnerów SSP i H — MCEI). Z katalogu wyłączono elementy opisane już w kartach (MCC v0, rejestr 
+algorytmów, pakiety DA i FPA) oraz standardowe narzędzia DevOps. Rozkład priorytetów: P1 — 18 pozycji, P2 — 
+22, P3 — 4. Status całego katalogu: KIERUNKOWE. 
+Oznaczenie 
+Znaczenie 
+P1 / P1 (min.) 
+Wymagane przez cele 90-dniowej roadmapy strategii — w wersji minimalnej; pełny zakres przechodzi do 
+P2. 
+P2 
+Etap 1 — po pierwszej płatnej referencji lub równolegle z rozwojem Etapu 1. 
+P3 
+Później — z wariantem Vessel Edge, VIL, rozbudową BD lub po bramce komercyjnej. 
+Własne 
+Budowa własna (zespół lub kontraktor z przeniesieniem praw na spółkę). 
+OSS / zakup / 
+konfiguracja 
+Gotowe rozwiązanie open source, licencja lub konfiguracja narzędzia już przewidzianego w BAZA. 
+ 
+Strona 8 z 17 
+
+
+--- PAGE 9 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+A. Walidacja i testy 
+Infrastruktura testowa, bez której nie da się wiarygodnie zmierzyć metryk komunikowanych klientom ani 
+zbudować golden test set dla anomalii AIS. 
+Nr 
+Rozwiązanie 
+Co robi 
+Pluginy · model · priorytet 
+1 
+Scenario Factory 
+Generuje fizycznie spójne strumienie NMEA/AIS, DSC, 
+GNSS i logów IDS z wstrzykniętymi atakami i prawdą 
+referencyjną. 
+SOAR, SDR-AIS, LLM-SOC, 
+DA, FPA · własne · P1 
+2 
+Golden Replay Bench 
+Wersjonowana biblioteka nagrań odtwarzana przy każdym 
+buildzie; regresja międzypluginowa i metryki jakości. 
+Wszystkie · własne (CI) · P1 
+3 
+PNT Lab Bench 
+Odtwarzanie sygnałów GNSS/OSNMA ze scenariuszami 
+spoofingu, wyłącznie przewodowo lub w komorze 
+ekranowanej. 
+PNT-Trust, SDR-AIS, DA-3 · 
+OSS + własne · P1 (min.) 
+4 
+AI Eval & Red-Team Harness 
+Ewaluacja każdej wersji modelu, testy halucynacji 
+regulacyjnych i prompt injection przez pola wejściowe. 
+LLM-SOC · OSS + przypadki 
+domenowe · P2 
+ 
+B. Kontrakty danych, treść i wiedza 
+Kontrakty danych i źródła wiedzy współdzielone przez kilka pluginów — zasada „jedna usługa zamiast kilku 
+lokalnych kopii”. 
+Nr 
+Rozwiązanie 
+Co robi 
+Pluginy · model · priorytet 
+5 
+Maritime Event Schema 
+Registry 
+Wersjonowany rejestr rozszerzeń OCSF/STIX z testem 
+kompatybilności wstecznej i walidatorem dla zewnętrznych 
+producentów danych. 
+Wszystkie, FPA · własne 
+(lekkie) · P1 
+6 
+Maritime Content Compiler 
+Jedno źródło playbooka kompilowane do XSOAR, Sentinel i 
+Splunk, z podpisem treści i notą zmian. 
+SOAR · własne · P1 (min.) 
+7 
+Vessel Reference Service 
+„Złoty rekord” statku: historia MMSI / IMO / nazwa / 
+bandera, zmiany zarządcy, listy sankcyjne. 
+SOAR, LLM-SOC, DA · 
+własne + źródła zewn. · P2 
+8 
+Maritime CTI Hub 
+Agregacja publicznych ostrzeżeń i raportów zakłóceń 
+GNSS, normalizacja do STIX 2.1 i dystrybucja przez TAXII. 
+SOAR, LLM-SOC, DA · OSS · 
+P2 
+9 
+Regulatory Change Monitor 
+Śledzi zmiany regulacyjne (MoU, IMO, MASS Code, E26/E27, 
+NIS2, AI Act) z mapą wpływu na playbooki i słowniki. 
+SOAR, LLM-SOC · własne 
+(lekkie) · P2 
+ 
+C. Dowód, podpis i bezpieczeństwo produktu 
+Narzędzia przekładające wymagania rdzenia i strategii (łańcuch dowodowy, podpis, obowiązki regulacyjne) na 
+infrastrukturę operacyjną. 
+Nr 
+Rozwiązanie 
+Co robi 
+Pluginy · model · priorytet 
+10 
+Evidence Reconstruction 
+Console 
+Odtwarza pełny łańcuch zdarzenia od wejścia do raportu, 
+weryfikuje podpisy i eksportuje pakiet dowodowy — rdzeń 
+raportu DA-4. 
+LLM-SOC, SOAR, DA, 
+SDR-AIS · własne · P1 
+11 
+Release Signing & 
+Provisioning 
+Podpis firmware, obrazów i treści algorytmami 
+post-kwantowymi na HSM; wstrzyknięcie tożsamości 
+urządzenia. 
+SDR-AIS, SOAR, LLM-SOC, 
+VIL · własne na HSM · P1 
+12 
+PSIRT / moduł CRA 
+Monitoring podatności z SBOM/CBOM, komunikaty CSAF i 
+VEX, przyjmowanie zgłoszeń i raportowanie wg CRA. 
+Wszystkie · OSS + 
+procedura · P1 
+Strona 9 z 17 
+
+
+--- PAGE 10 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+Nr 
+Rozwiązanie 
+Co robi 
+Pluginy · model · priorytet 
+13 
+Certification Evidence 
+Manager 
+Mapa wymaganie › dowód › wersja dla E26/E27, IEC 62443, 
+ścieżki DNV, ISO 27001 i AI Act; pakiety audytowe. 
+Wszystkie · OSS GRC lub 
+zakup · P2 
+ 
+D. Dane treningowe i MLOps 
+Narzędzia danych treningowych i zarządzania modelami; wszystkie działają lokalnie, zgodnie z zasadą 
+suwerenności przetwarzania korpusu. 
+Nr 
+Rozwiązanie 
+Co robi 
+Pluginy · model · priorytet 
+14 
+Annotation & Expert Review 
+Workbench 
+Anotacja z pomiarem zgodności ekspertów (kappa), 
+pseudonimizacją i śladem decyzji; trzy strumienie: 
+LLM-SOC, MCEI, VIL. 
+LLM-SOC, VIL, MCEI · OSS 
+on-prem · P1 
+15 
+Model & Dataset 
+Governance Registry 
+Rejestr modeli i zbiorów z kartami i linią pochodzenia 
+korpus › wagi › werdykt; bramka statusu korpusu. 
+LLM-SOC, VIL · OSS · P2 
+ 
+E. Dostarczanie i komercjalizacja 
+Narzędzia skracające drogę od demo do płatnej subskrypcji oraz chroniące marżę i IP w kanale. 
+Nr 
+Rozwiązanie 
+Co robi 
+Pluginy · model · priorytet 
+16 
+Integration Readiness 
+Validator 
+Test gotowości środowiska klienta przed wdrożeniem; 
+skraca onboarding i ogranicza dni usług. 
+SOAR, LLM-SOC, FPA · 
+własne · P2 
+17 
+Pilot & Demo Control Center 
+Tenant demo lub pilota na danych syntetycznych z 
+pomiarem kryteriów sukcesu i raportem końcowym pod 
+referencję. 
+Wszystkie · własne · P2 
+18 
+CPQ z kontrolą metodologii 
+Konfigurator ofert kodujący metodologię cenową i politykę 
+rabatową; pilnuje progu netto MARIS ≥ 55% listy. 
+Wszystkie · CRM lub lekkie 
+własne · P2 
+19 
+Entitlement & Metering 
+Licencje per tier i instancja (także offline), pomiar zapytań i 
+wykrywanie prób ekstrakcji metody. 
+FPA, LLM-SOC, SOAR, 
+SDR-AIS · własne · P2 
+20 
+Ship–Shore Transport Agent 
+Wspólny agent store-and-forward dla statków, odporny na 
+przerywaną łączność satelitarną. 
+Vessel Edge, VIL, DA-3 · 
+własne · P3 
+ 
+F. Governance wewnętrzny 
+Wewnętrzna dyscyplina twierdzeń zewnętrznych, decyzji, finansowania i dostępu do wiedzy. 
+Nr 
+Rozwiązanie 
+Co robi 
+Pluginy · model · priorytet 
+21 
+Rejestr twierdzeń i ujawnień 
+Każde twierdzenie zewnętrzne ze statusem, źródłem i datą 
+ważności; linter blokuje niezarejestrowane twierdzenia w 
+deckach i wnioskach. 
+Wewnętrzne · własne 
+(lekkie) · P1 
+22 
+Rejestr decyzji i spójności 
+dokumentów 
+Decyzje PM/CTO z właścicielem i terminem; wychwytuje 
+sprzeczności między dokumentami. 
+Wewnętrzne · 
+Jira/Confluence · P1 
+23 
+Alokacja kosztów B+R / seed 
+Ewidencja czasu per pakiet prac i źródło finansowania z 
+blokadą podwójnego finansowania. 
+Wewnętrzne · zakup lub 
+konfiguracja · P2 
+24 
+Asystent wiedzy z kontrolą 
+TLP 
+Lokalny RAG nad kartami, playbookami i cennikiem z 
+cytatem źródła; dokumenty chronionej metody wyłączone. 
+Wewnętrzne · OSS + 
+własne · P3 
+ 
+Strona 10 z 17 
+
+
+--- PAGE 11 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+G. Baza Partnerów SSP — Partner Security Intelligence Register 
+Rejestr zastępuje rozproszone zakładki partnerskie i staje się źródłem prawdy dla zasady „rejestracja przed 
+pierwszym kontaktem” oraz statusu „partner” w materiałach zewnętrznych. Pozycje 26–30 to moduły jednego 
+narzędzia (jedno wydanie MVP-P1). 
+Nr 
+Rozwiązanie 
+Co robi 
+Pluginy · model · priorytet 
+25 
+Model danych i governance 
+Słowniki, role, właściciele danych, klasyfikacja poufności i 
+formularz kwalifikacji. 
+Wewnętrzne · procedura + 
+konfiguracja · P1 
+26 
+Organizacje, kontakty, 
+capability matrix 
+Dane prawne i handlowe, status relacji, kompetencje w 
+sześciu domenach z dowodem i datą weryfikacji. 
+Wszystkie · własne lub 
+low-code · P1 (min.) 
+27 
+Kwalifikacja 
+podwykonawców A–E 
+Ocena pracy z informacją poufną, lokalizacji danych, 
+ciągłości działania i konfliktu interesów. 
+Wszystkie, MCEI · własne 
+lub low-code · P1 
+28 
+Umowy, NDA i repozytorium 
+NDA, umowy ramowe, polisy i certyfikaty z wersjami i 
+powiadomieniem przed wygaśnięciem. 
+Wewnętrzne · własne lub 
+low-code · P1 
+29 
+Projekty i workflow 
+Powiązanie partnera z projektem, ofertą, grantem i 
+pilotażem; proces od identyfikacji do umowy. 
+Wszystkie · własne lub 
+low-code · P1 (min.) 
+30 
+Bezpieczeństwo, dostęp i 
+audyt 
+SSO/MFA, uprawnienia do poziomu pola, szyfrowanie, 
+nieedytowalny ślad audytowy od pierwszego rekordu. 
+Wewnętrzne, MCC · własne 
++ IdP · P1 
+31 
+Scoring kontekstowy i 
+shortlisty 
+Wynik per projekt i poziom poufności z wagami kryteriów i 
+poziomem pewności. 
+Wszystkie · własne lub 
+low-code · P2 
+32 
+Dashboardy i raporty 
+Widoki zarządczy, BD/PM, security i compliance. 
+Wewnętrzne · OSS BI · P2 
+33 
+Integracje fazy 2 
+Poczta, kalendarz, CRM, CPQ, ticketing, e-podpis. 
+Wewnętrzne · konfiguracja 
+· P2 
+34 
+Portal partnera, graf, AI 
+matching 
+Ograniczony widok dla podwykonawcy, graf relacji, analiza 
+koncentracji dostawców. 
+Wszystkie · własne + OSS 
+lokalnie · P3 
+ 
+H. MCEI — Maritime Casualty & Environmental Intelligence 
+MCEI jest komponentem danych LLM-SOC (warstwa wiedzy) i kontekstu playbooków SOAR, a nie piątym 
+produktem — sekwencja waterfall pozostaje nienaruszona. Przetwarza wyłącznie publiczne raporty i dane o 
+wypadkach; nie ma styku z chronioną metodą. 
+Nr 
+Rozwiązanie 
+Co robi 
+Pluginy · model · priorytet 
+35 
+F0 — weryfikacja twierdzeń i 
+bramka prawna 
+Opinia prawna (no-blame, RODO, licencje i TDM per źródło, 
+AI Act), rejestr licencji, protokół anotacji. 
+LLM-SOC, SOAR · 
+procedura · P1 
+36 
+F1 — konektory i provenance 
+Konektory o wspólnym interfejsie, niezmienne migawki, 
+pochodzenie każdego rekordu. 
+LLM-SOC, SOAR · własne 
+na OSS · P2 
+37 
+F2 — lokalne parsowanie, 
+korpus 
+Pozyskanie raportów z higieną (regulaminy, limity) i 
+parsowanie wyłącznie lokalne. 
+LLM-SOC · OSS lokalne + 
+własne · P2 
+38 
+F3 — kaskada NLP 
+Reguły › enkoder domenowy › LLM z wymuszonym 
+schematem; każda etykieta z odniesieniem do źródła. 
+LLM-SOC · własne + OSS · 
+P2 
+39 
+Taksonomia cyber-fizyczna 
+Tagi zdarzeń, w których przyczyniły się zakłócenia GNSS, 
+błędne AIS, ECDIS lub alarmy mostka. 
+LLM-SOC, SOAR, DA · 
+własne (B+R) · P2 
+40 
+Warstwa środowiskowa 
+Dane o zanieczyszczeniach, substancjach i działaniach 
+zwalczających; kontekst bałtycki i globalny. 
+SOAR, DA · własne · P2 
+41 
+Analityka znormalizowana 
+Wskaźniki na jednostkę ekspozycji floty z przedziałami 
+ufności i flagą zbyt małej próby. 
+SOAR, LLM-SOC · własne + 
+OSS · P2 
+Strona 11 z 17 
+
+
+--- PAGE 12 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+Nr 
+Rozwiązanie 
+Co robi 
+Pluginy · model · priorytet 
+42 
+Walidator „liczby z SQL, 
+narracja z LLM” 
+Model werbalizuje wyłącznie fakty z zatwierdzonych 
+zapytań — bez swobodnego SQL generowanego przez 
+model. 
+LLM-SOC, SOAR, DA · 
+własne · P2 
+43 
+Lookup API dla playbooków 
+Historia wypadków i zanieczyszczeń statku jako kontekst 
+playbooków SOAR. 
+SOAR · własne (REST) · P2 
+44 
+Oferta analityczna MCEI (F5) 
+Raport benchmarkowy dla klubu P&I lub armatora; start 
+dopiero po listingu SOAR w marketplace. 
+Oferta analityczna · OSS + 
+własne · P3 
+ 
+5. Sekwencja wdrożenia 
+Kolejność opiera się na dwóch kryteriach: koszt wykonania i nieodwracalność. Pozycje tanie, domykające 
+zadania z pierwszych 30 dni, idą pierwsze; pozycje, których późniejsza zmiana łamie interfejs lub łańcuch 
+zaufania, muszą powstać przed pierwszym klientem. 
+Krok 
+Horyzont 
+Pozycje 
+Cel 
+1 
+Dni 0–30 
+21, 22, 12, 25, 35, 28 (minimum) 
+Rejestr wynalazków i kalibracja twierdzeń, umowy 
+wykonawców z przeniesieniem praw, governance rejestru 
+partnerów; obowiązki CRA już obowiązują. 
+2 
+Przed pierwszym 
+klientem 
+5, 11, 6 (minimum) 
+Schemat zdarzeń, podpis i provisioning — zmiana po 
+wdrożeniu łamie interfejs lub łańcuch zaufania. 
+3 
+Dni 31–60 
+1, 14, 2, 3 (minimum) 
+Golden test set anomalii AIS, demonstrator PNT-Trust z 
+OSNMA, kryteria akceptacji pilota SOAR. 
+4 
+Dni 31–60 
+30, 26, 27, 29 
+Jedno wydanie MVP-P1 rejestru partnerów z audytem i 
+uprawnieniami od pierwszego rekordu. 
+5 
+Dni 31–90 
+10, rozbudowa 2 
+DA-4 jako powtarzalny raport; demonstracja przepływu 
+AIS/PNT › DA › LLM-SOC › STIX 2.1 › playbook. 
+6 
+Etap 1 
+4, 7, 8, 9, 13, 15–19, 23; 31–33 
+Skalowanie po pierwszej płatnej referencji: jakość 
+modelu, kanał, certyfikacja, rozliczenia. 
+7 
+Etap 1 — korpus 
+LLM-SOC 
+36 › 37 › 38 (z 39, 40) › 41 › 42 › 43 
+MCEI F1–F4 razem z zatrudnieniem inżyniera AI/LLM; ok. 
+24–32 tyg. (SZACUNKOWE). 
+8 
+Później 
+20, 24, 34, 44 
+Wraz z Vessel Edge, VIL i rozbudową BD; nr 44 po listingu 
+SOAR. 
+ 
+Największą natychmiastową wartość przy najniższym koszcie dają pozycje 21, 22, 25 i 35 (od kilku dni do kilku 
+tygodni pracy, bez nowej infrastruktury) oraz 5, 11 i 12 — rozstrzygnięte przed pierwszym klientem zamiast 
+kosztownej zmiany kontraktowej po wdrożeniu. 
+Ścieżki krytyczne i styki 
+–​ Rejestr partnerów (G): 25 › 30 › 26–29 › 31 › 32, 33 › 34; warunek: decyzja o formie narzędzia (system własny, 
+moduł CRM lub low-code). 
+–​ MCEI (H): 35 › 36 › … › 44; opinia prawna przed pozyskaniem raportów, listing SOAR przed ofertą analityczną. 
+–​ Styki z grupami A–F: kwalifikacja anotatorów przed dostępem do korpusu (27 › 14 › 38); status „partner” 
+wyłącznie z podpisanym artefaktem (26, 28 › 21). 
+Strona 12 z 17 
+
+
+--- PAGE 13 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+6. Ekonomika portfela 
+Zasada i metodologia 
+Zasada nadrzędna: niska cena jest argumentem sprzedażowym, nie ustępstwem. Klient porównuje cenę 
+pluginu z kosztem zdarzenia, któremu plugin zapobiega albo które dokumentuje — nie z ceną innego 
+oprogramowania. Metodologia M1–M6: jedna lista globalna, cena jako ułamek kotwicy wartości, optymalizacja 
+regionalna wyłącznie przez wybór pakietu, widełki i usługi. 
+Plugin 
+Kotwica wartości 
+Relacja ceny do kotwicy 
+SOAR Content Pack 
+Doba detencji PSC: 20 000 – 1 000 000+ 
+USD 
+Starter i Professional poniżej jednej doby detencji 
+SDR-AIS Fusion Edge 
+System Tier-1: od 500 000 EUR 
+Rok 1 pakietu portowego (7 600 EUR) ≈ 1,5% 
+systemu Tier-1 
+LLM-SOC Triage API 
+Roczny koszt etatu analityka SOC 
+Stanowisko to ułamek etatu analityka 
+Voice Intelligence Layer 
+Koszt dodatkowej zmiany operatora VHF 
+Pay-per-use bez zobowiązania rocznego 
+ 
+Punkty wejścia — Grecja (P1) i Zatoka Perska 
+Grecja: ok. 1 150 spółek armatorskich, przewaga firm rodzinnych, decyzje podejmowane osobiście przez 
+armatora, silny wpływ klubów P&I; optymalizacja przez najniższy punkt wejścia i dolną połowę widełek. Zatoka 
+(Katar, Arabia Saudyjska, ZEA): duże floty narodowe o scentralizowanych zakupach, wymogi lokalizacji danych i 
+programy local content; ta sama lista, wyższy tier i on-premise tam, gdzie wymaga tego suwerenność danych. 
+Plugin 
+Grecja — punkt wejścia 
+Zatoka — punkt wejścia 
+SOAR Content Pack 
+Professional 9 000 EUR (ship managerzy); 
+Starter 4 500 EUR (SME, marketplace); 
+Enterprise 16 000 EUR (kluby P&I) 
+Enterprise 16 000 EUR w centralnym SOC floty; 
+Professional przy konwersji pilotażu 
+SDR-AIS Fusion Edge 
+Pakiet portowy: 7 600 EUR rok 1, 1 400 EUR/rok 
+dalej 
+Wolumen > 10 szt. przez integratora po 2 200 
+EUR/szt. — po ocenie kontroli eksportu 
+LLM-SOC Triage API 
+Stanowisko 3 600 EUR; per triage 0,20 EUR; 
+on-premise 24 000 EUR 
+On-premise 28 000 EUR (lokalizacja danych); 
+stanowisko 3 600 EUR 
+Voice Intelligence Layer 
+Pay-per-use 0,10–0,14 EUR/min; mała flota 2 
+400 EUR 
+On-premise do 32 000 EUR; pay-per-use 
+0,14–0,18 EUR/min 
+Usługa dodatkowa 
+— 
+Audyt cyber przy przekazaniu statku: 4 800 
+EUR/statek (PROPOZYCJA) 
+ 
+Polityka rabatowa (wspólna dla obu rynków) 
+Reguła 
+Treść 
+Akceptuje 
+R-1 Design partner 
+−20% w roku 1; pierwsi 3 klienci na rynek; warunek: referencja i case 
+study 
+Handlowiec + PM 
+R-2 Umowa wieloletnia 
+24–36 mies. z płatnością roczną z góry: −10% na każdy rok 
+Handlowiec 
+R-3 Drugi plugin 
+−10% na tańszy z dwóch pluginów w tej samej organizacji 
+Handlowiec 
+R-4 Wolumen sprzętu 
+SDR-AIS > 10 szt.: 2 200 EUR/szt. wyłącznie przez integratora 
+PM 
+Strona 13 z 17 
+
+
+--- PAGE 14 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+Reguła 
+Treść 
+Akceptuje 
+R-5 Sufit i podłoga 
+Rabat maks. 25%; netto MARIS min. 55% listy; usługi bez rabatu; 
+sprzęt nigdy < 2 200 EUR 
+Powyżej: PM; wieloletnie: 
+PM + CFO 
+R-6 Kanał 
+Udział kanału liczony od ceny klienta; nie jest rabatem i nie sumuje 
+się z R-1–R-3 
+PM 
+ 
+Przykłady ofert (KIERUNKOWE) 
+–​ Grecki ship manager, SOAR Professional przez kanał, pierwszy klient referencyjny: rok 1 — 9 000 × 0,80 = 7 
+200 EUR (netto MARIS po 25% udziału kanału: 5 400 EUR); rok 2 przy umowie 24-miesięcznej — 8 100 EUR. 
+–​ Port w Grecji: pakiet SDR-AIS 7 600 EUR + subskrypcja DA-2 4 800 EUR = 12 400 EUR w roku 1; kolejne lata 6 
+200 EUR rocznie. 
+–​ Klub P&I w sporze: DA-4 — 1 800 EUR za raport, wobec kosztu jednego sporu. 
+–​ Finansujący w Zatoce, portfel 30 statków: DA-5 — 30 × 180 = 5 400 EUR/rok. 
+7. Własność intelektualna, suwerenność i model realizacji 
+Zasady ochrony IP 
+Strategia IP portfela to w praktyce sekwencja bramek ujawnienia, a nie lista patentów: o tym, co da się chronić, 
+decyduje kolejność zdarzeń — zgłoszenie, prezentacja, publikacja w marketplace, wniosek grantowy, dossier 
+certyfikacyjne. Poniższe tezy nie stanowią opinii prawnej. 
+–​ Nowość absolutna: każde publiczne ujawnienie przed zgłoszeniem (konferencja, pitch, wniosek oceniany 
+bez poufności, listing w marketplace) niszczy nowość; Europa nie przewiduje ogólnego okresu ulgowego. 
+–​ Wynalazki realizowane komputerowo są chronione, gdy dają efekt techniczny — kandydaci MARIS leżą na 
+poziomie sygnału, czasu i fuzji sensorów, nie w playbookach czy promptach. 
+–​ Tajemnica przedsiębiorstwa jako ochrona domyślna wymaga udokumentowanych działań: klasyfikacji TLP, 
+NDA, ewidencji dostępu, zasady need-to-know. 
+–​ Umowy z wykonawcami z wyraźnym przeniesieniem praw do wynalazków i majątkowych praw autorskich z 
+polami eksploatacji. 
+–​ Licencje open source: logika chroniona działa w odrębnym procesie od komponentów na licencji GPLv3 (do 
+potwierdzenia opinią). 
+Mapa IP — plugin po pluginie 
+Plugin / warstwa 
+Co chronimy 
+Instrumenty 
+SOAR Content Pack 
+Logika playbooków, mapowanie 
+kodów deficytów PSC, mapowania 
+OCSF 
+Prawo autorskie i licencja, sui generis bazy danych, tajemnica 
+progów, znak towarowy; patent — potencjał niski 
+SDR-AIS Fusion Edge 
+Metoda korelacji (FUS-10), 
+kandydaci FUS-G1–G4, firmware 
+Planowany patent EP, tajemnica parametrów, izolacja od 
+GPLv3 
+LLM-SOC Triage API 
+Wagi modelu, zbiory do 
+dostrajania, reguły triage, 
+podpisany werdykt 
+Tajemnica + zakaz ekstrakcji i destylacji w warunkach API; sui 
+generis korpusu; patent — potencjał średni-niski 
+Voice Intelligence Layer 
+Modele ASR/TTS, integracja OEM, 
+łańcuch dowodowy audio 
+Tajemnica, prawo autorskie, umowa OEM z podziałem 
+background/foreground IP; patent kandydacki 
+Strona 14 z 17 
+
+
+--- PAGE 15 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+Plugin / warstwa 
+Co chronimy 
+Instrumenty 
+PNT-Trust 
+Schemat PIL i reguły agregacji, 
+wnioskowanie flotowe 
+Patenty kandydackie, publikacja obronna schematu, 
+tajemnica progów 
+ 
+Suwerenność przetwarzania 
+Narzędzia przetwarzające korpus, wagi modeli lub dokumenty wewnętrzne (m.in. nr 4, 14, 15, 24 oraz pozycje 
+MCEI 37, 38, 41, 42) działają wyłącznie lokalnie — docelowo na infrastrukturze KRAKEN i CI TASK — bez usług 
+chmurowych przetwarzających dane poza polską jurysdykcją. Grupa H nie ma styku z chronioną metodą; pozycje, 
+które go mają (np. Scenario Factory, Golden Replay Bench, Evidence Console), od pierwszej wersji operują 
+wyłącznie na wyjściach i danych syntetycznych. 
+Budowa własna a gotowe rozwiązania 
+Strategia zastrzega, że usługi mają tworzyć powtarzalne artefakty produktowe, a nie prowadzić do modelu 
+software house’u. 17 z 44 pozycji opiera się na open source, zakupie, konfiguracji lub procedurze; 27 wymaga 
+budowy własnej (w tym trzy lekkie). Budowę własną uzasadniają trzy kryteria: aktywo produktowe (np. konsola 
+dowodowa jako rdzeń raportu DA-4), ochrona kontraktu lub IP (schemat zdarzeń, łańcuch zaufania, ochrona 
+przed ekstrakcją) oraz czas wejścia na rynek (kompilator treści dla trzech platform z jednego źródła). Pozostałe 
+pozycje własne przed startem prac sprawdza się pod kątem gotowych odpowiedników. 
+8. Wejście na rynek — pilotaże, kanały, komunikacja 
+Ścieżki pilotażowe Grecja × Zatoka Perska 
+Ścieżki oceniono w sześciu kryteriach (zgodność z sekwencją, brak instalacji na pokładzie w strefie konfliktu, 
+istniejący kanał, wartość dowodowa w oknie Q4 2026–2027, ryzyko kontrahenta, koszt i zasoby). Oceny są 
+SZACUNKOWE i służą ustaleniu kolejności, nie prognozie konwersji. 
+Ścieżka 
+Typ 
+Istota 
+PŚ-1 Dowód kryzysowy integralności 
+nawigacji 
+Rekomendowana 
+Retrospektywne rozróżnienie w danych z okresu kryzysu w Zatoce 
+(luty–sierpień 2026), które anomalie pozycji wynikały z zakłóceń; 
+sponsor: klub P&I i armator grecki; 8–10 tygodni. 
+PŚ-2 Audyt cyber przy przekazaniu 
+statku (S&P) 
+Rekomendowana 
+Audyt przy transakcjach zakupu tonażu od armatorów greckich 
+przez floty z Zatoki. 
+PŚ-3 Jakość danych dla platformy AI 
+armatora 
+Rekomendowana 
+Data Assurance jako walidacja danych wejściowych modeli; 
+wzmacniana dowodem z PŚ-1. 
+PŚ-4 MDA nad trasami kabli i 
+interkonektorów 
+Warunkowa 
+Wschodnie Śródziemnomorze; nie startuje przed instalacją 
+referencyjną SDR-AIS. 
+PŚ-5 OT nowego tonażu LNG 
+(E26/E27) 
+Warunkowa 
+Wymaga opinii E26/E27 — wcześniejsze otwarcie łamałoby 
+sekwencję. 
+PŚ-6 Kanał instytucjonalny MarCCE 
+(Cypr) 
+Odroczona 
+Regionalne centrum cyberbezpieczeństwa morskiego jako kanał 
+instytucjonalny. 
+ 
+Zależności: PŚ-1 dostarcza materiał dowodowy dla PŚ-3 i naturalnych sponsorów dla PŚ-2. Przed każdą 
+rozmową w Zatoce obowiązuje screening sankcyjny i beneficjenta rzeczywistego sponsora. 
+Strona 15 z 17 
+
+
+--- PAGE 16 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+Japan Radio Co. (JRC) — cztery tory, jedna sekwencja 
+JRC działa w Europie przez JRC Europe i Alphatron Marine, a jego baza zainstalowana obejmuje armatorów 
+greckich — przecina się więc z rynkiem P1. Model nie polega na sprzedaży urządzeń JRC (MARIS nie jest 
+dealerem), lecz na wykorzystaniu bazy zainstalowanej jako nośnika dowodu i kanału dostępu. Integracje 
+wyłącznie przez standardowe wejścia i wyjścia STIX 2.1 — JRC rozwija własną fuzję sensorów. 
+Tor 
+Horyzont 
+Zakres 
+J1 Interoperacyjność bez umowy 
+Q4 2026 
+Parsery OCSF dla standardowych komunikatów urządzeń JRC; 
+profil „mostek JRC” w SOAR i demo. 
+J2 Pilotaż na statku z mostkiem JRC 
+Q1–Q2 2027 
+Jedna jednostka europejskiego armatora (preferencyjnie 
+greckiego); strumień flag GNSS i alertów do SOAR/LLM-SOC. 
+J3 Porozumienie kanałowe 
+2027 
+Po dowodzie z J2: polecenie lub odsprzedaż w ramach umów 
+serwisowych i retrofitu mostka. 
+J4 OEM i technologia 
+2027+, warunkowo 
+Warstwa głosowa w radiostacjach GMDSS, SDK crypto-agility 
+dla łańcucha aktualizacji, analityka PNT — każdy za własną 
+bramką. 
+ 
+9. Słownik skrótów 
+Skrót 
+Znaczenie 
+AIS 
+Automatic Identification System — automatyczna identyfikacja statków 
+ARR 
+Annual Recurring Revenue — roczny przychód powtarzalny 
+CACAO 2.0 
+Standard OASIS opisu playbooków bezpieczeństwa 
+CBOM / SBOM 
+Inwentarz kryptograficzny / inwentarz komponentów oprogramowania 
+CRA 
+Cyber Resilience Act — rozporządzenie (UE) 2024/2847 
+DA / FPA 
+Data Assurance / Fusion Platform/API — pakiety usługowe portfela 
+DSC 
+Digital Selective Calling — cyfrowe wywołanie selektywne (VHF kanał 70) 
+E26/E27 
+Wymagania IACS dotyczące cyberodporności statków i wyposażenia 
+FUS-10 
+Oznaczenie wewnętrzne chronionej metody korelacji SDR+AIS 
+GMDSS 
+Światowy Morski System Łączności Alarmowej i Bezpieczeństwa 
+MCC v0 
+Wspólny rdzeń startowy pluginów (wymagania K1–K10) 
+MCEI 
+Maritime Casualty & Environmental Intelligence — komponent danych LLM-SOC 
+MRCC / VTS 
+Morskie ratownicze centrum koordynacyjne / służba kontroli ruchu statków 
+MSSP 
+Managed Security Service Provider — dostawca usług bezpieczeństwa 
+OCSF / STIX 2.1 
+Otwarte standardy schematu zdarzeń i wymiany informacji o zagrożeniach 
+OSNMA / SAS 
+Usługi uwierzytelniania sygnału Galileo (dane nawigacyjne / sygnał E6) 
+P&I 
+Kluby wzajemnego ubezpieczenia armatorów (Protection & Indemnity) 
+PIL 
+Wskaźnik poziomu integralności PNT (PIL-1 … PIL-3) 
+PNT 
+Positioning, Navigation and Timing — pozycja, nawigacja i czas 
+PQC 
+Kryptografia post-kwantowa 
+Strona 16 z 17 
+
+
+--- PAGE 17 ---
+MARIS.AI · Przewodnik po pluginach i sub-systemach​
+TLP:AMBER 
+Skrót 
+Znaczenie 
+PSC 
+Port State Control — kontrola państwa portu 
+SDR 
+Software Defined Radio — radio definiowane programowo 
+SIEM / SOAR 
+Systemy zbierania zdarzeń bezpieczeństwa / orkiestracji i automatyzacji odpowiedzi 
+SSP 
+Security Service Provider — kontekst Bazy Partnerów 
+Tor B 
+Ścieżka obronna i dual-use, zamknięta bramką do rundy seed i listingu 
+TLP:AMBER 
+Klasyfikacja: udostępnianie ograniczone do odbiorców z potrzebą wiedzy 
+ 
+Strona 17 z 17 

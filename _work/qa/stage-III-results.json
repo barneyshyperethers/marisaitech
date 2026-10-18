@@ -1,0 +1,16 @@
+{
+  "checks": [
+    "Both HTML files parse; IDs are unique; all relative links and CSS resources resolve.",
+    "Top header contains the requested native link; existing single application script is retained.",
+    "Glossary skeleton has a valid return link, Polish metadata, and no premature scene initialization.",
+    "All pre-existing source documents, graphics, JavaScript and internal tests remain byte-identical."
+  ],
+  "changed_existing_files": [
+    "README.txt",
+    "_work/state.json",
+    "index.html"
+  ],
+  "limits": [
+    "Static checks only. No browser navigation, layout, keyboard or WebGL visual test."
+  ]
+}
